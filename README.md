@@ -1,0 +1,2 @@
+SSM 框架脚手架
+mybatis 的使用主要继承了一个第三方的通用mapper
