@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.company.dao.ModuleMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.company.entity.Module">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="p_id" jdbcType="INTEGER" property="pId" />
+    <result column="en_code" jdbcType="VARCHAR" property="enCode" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="target" jdbcType="VARCHAR" property="target" />
+    <result column="is_menu" jdbcType="BIT" property="isMenu" />
+    <result column="is_public" jdbcType="BIT" property="isPublic" />
+    <result column="sort_code" jdbcType="TINYINT" property="sortCode" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="enable_mark" jdbcType="BIT" property="enableMark" />
+    <result column="function_code" jdbcType="VARCHAR" property="functionCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, p_id, en_code, name, icon, target, is_menu, is_public, sort_code, url, enable_mark, 
+    function_code
+  </sql>
+  
+  <!-- <select id="selectAll" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from module
+  </select> -->
+  
+  <select id="selectByEnableMark" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select
+  	<include refid="Base_Column_List" />
+  	from module
+  	where enable_mark = {enableMark,jdbcType=INTEGER}
+  </select>
+  
+  <select id="listModuleUrlByCompanyId" resultType="java.lang.String">
+  	select DISTINCT(m.url) from module m, qualification_module qm, company_qualification cq
+  	where cid = #{companyId,jdbcType=INTEGER}
+  	and m.id = qm.mid
+  	and qm.qid = cq.qid
+  </select>
+  
+  <select id="listModuleByCompanyId" resultMap="BaseResultMap">
+  	SELECT DISTINCT(m.id), m.p_id, m.en_code, m.name, m.icon, m.target, m.is_menu, m.sort_code,
+  	m.url, m.enable_mark
+  	FROM (SELECT qid FROM company_qualification WHERE cid = #{companyId,jdbcType=INTEGER}) cqq
+  	LEFT JOIN qualification q ON cqq.qid = q.id
+  	LEFT JOIN qualification_module qm ON qm.qid = q.id
+  	LEFT JOIN module m ON m.id = qm.mid;
+  </select>
+  
+  <!-- <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from module
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from module
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.company.entity.Module">
+    insert into module (id, p_id, en_code, 
+      name, icon, target, 
+      is_menu, is_public, sort_code, 
+      url, enable_mark, function_code
+      )
+    values (#{id,jdbcType=INTEGER}, #{pId,jdbcType=INTEGER}, #{enCode,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{target,jdbcType=VARCHAR}, 
+      #{isMenu,jdbcType=BIT}, #{isPublic,jdbcType=BIT}, #{sortCode,jdbcType=TINYINT}, 
+      #{url,jdbcType=VARCHAR}, #{enableMark,jdbcType=BIT}, #{functionCode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.company.entity.Module">
+    insert into module
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="pId != null">
+        p_id,
+      </if>
+      <if test="enCode != null">
+        en_code,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="icon != null">
+        icon,
+      </if>
+      <if test="target != null">
+        target,
+      </if>
+      <if test="isMenu != null">
+        is_menu,
+      </if>
+      <if test="isPublic != null">
+        is_public,
+      </if>
+      <if test="sortCode != null">
+        sort_code,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="enableMark != null">
+        enable_mark,
+      </if>
+      <if test="functionCode != null">
+        function_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pId != null">
+        #{pId,jdbcType=INTEGER},
+      </if>
+      <if test="enCode != null">
+        #{enCode,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="target != null">
+        #{target,jdbcType=VARCHAR},
+      </if>
+      <if test="isMenu != null">
+        #{isMenu,jdbcType=BIT},
+      </if>
+      <if test="isPublic != null">
+        #{isPublic,jdbcType=BIT},
+      </if>
+      <if test="sortCode != null">
+        #{sortCode,jdbcType=TINYINT},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="enableMark != null">
+        #{enableMark,jdbcType=BIT},
+      </if>
+      <if test="functionCode != null">
+        #{functionCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.company.entity.Module">
+    update module
+    <set>
+      <if test="pId != null">
+        p_id = #{pId,jdbcType=INTEGER},
+      </if>
+      <if test="enCode != null">
+        en_code = #{enCode,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="target != null">
+        target = #{target,jdbcType=VARCHAR},
+      </if>
+      <if test="isMenu != null">
+        is_menu = #{isMenu,jdbcType=BIT},
+      </if>
+      <if test="isPublic != null">
+        is_public = #{isPublic,jdbcType=BIT},
+      </if>
+      <if test="sortCode != null">
+        sort_code = #{sortCode,jdbcType=TINYINT},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="enableMark != null">
+        enable_mark = #{enableMark,jdbcType=BIT},
+      </if>
+      <if test="functionCode != null">
+        function_code = #{functionCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.company.entity.Module">
+    update module
+    set p_id = #{pId,jdbcType=INTEGER},
+      en_code = #{enCode,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      icon = #{icon,jdbcType=VARCHAR},
+      target = #{target,jdbcType=VARCHAR},
+      is_menu = #{isMenu,jdbcType=BIT},
+      is_public = #{isPublic,jdbcType=BIT},
+      sort_code = #{sortCode,jdbcType=TINYINT},
+      url = #{url,jdbcType=VARCHAR},
+      enable_mark = #{enableMark,jdbcType=BIT},
+      function_code = #{functionCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

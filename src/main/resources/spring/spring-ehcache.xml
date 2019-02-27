@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cache="http://www.springframework.org/schema/cache" 
+	xsi:schemaLocation="
+    		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+			http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd"
+	default-lazy-init="false">
+
+
+	<!-- shiro的缓存管理器，然后需要将缓存管理器注入到安全管理其中
+	这里是可以自定义设置Ehcache的配置文件，具体可以看配置文件里的配置，
+	
+	可以采用apache默认的EHCache配置,源码中
+	private String cacheManagerConfigFile = "classpath:org/apache/shiro/cache/ehcache/ehcache.xml";
+	
+	
+	<bean id="ehCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">  
+	       classpath是缓存属性的配置文件 
+	       <property name="cacheManagerConfigFile" value="classpath:ehcache.xml" />  
+	</bean>
+	-->  
+	
+	
+	<!-- <bean id="ehCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+   	
+   		 <property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml" />  
+   	
+	</bean> -->
+	
+	<!-- 单独 ehcacheManager配置 -->
+	<!-- 启用缓存注解功能 -->
+	<cache:annotation-driven cache-manager="cacheManager"/>
+	<!-- 缓存管理器工厂加载ehcache的配置 -->
+	<bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"> 
+        <property name="configLocation" value="classpath:ehcache-config.xml"/>
+	</bean>
+	<!-- 声明缓存管理器 -->
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager"> 
+        <property name="cacheManager" ref="cacheManagerFactory"/>
+	</bean>
+	
+	
+	<!-- 
+	<bean id="cacheManagerFactory"  class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"  
+	   p:configLocation="classpath:ehcache.xml"></bean>  
+	 -->	
+	   
+	   <!-- 声明cacheManager --> 
+	   <!--  
+	<bean id="shiroEhcacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager"   
+	   p:cacheManager-ref="cacheManagerFactory" ></bean>  
+	    -->	
+	    
+	    
+</beans>

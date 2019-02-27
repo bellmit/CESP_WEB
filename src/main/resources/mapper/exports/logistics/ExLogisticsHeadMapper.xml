@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyitg.cesp.core.exports.logistics.dao.ExLogisticsHeadMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsHead" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="decl_ent_id" property="declEntId" jdbcType="INTEGER" />
+    <result column="e_h_s_ent_id" property="eHSEntId" jdbcType="INTEGER" />
+    <result column="customs_code" property="customsCode" jdbcType="VARCHAR" />
+    <result column="ciq_org_code" property="ciqOrgCode" jdbcType="VARCHAR" />
+    <result column="ent_loading_no" property="entLoadingNo" jdbcType="VARCHAR" />
+    <result column="i_e_port" property="iEPort" jdbcType="VARCHAR" />
+    <result column="pack_no" property="packNo" jdbcType="DECIMAL" />
+    <result column="gross_weight" property="grossWeight" jdbcType="DECIMAL" />
+    <result column="traf_mode" property="trafMode" jdbcType="VARCHAR" />
+    <result column="tran_no" property="tranNo" jdbcType="VARCHAR" />
+    <result column="vayage_no" property="vayageNo" jdbcType="VARCHAR" />
+    <result column="bill_no" property="billNo" jdbcType="VARCHAR" />
+    <result column="domestic_traf_no" property="domesticTrafNo" jdbcType="VARCHAR" />
+    <result column="loc_code" property="locCode" jdbcType="VARCHAR" />
+    <result column="load_date" property="loadDate" jdbcType="TIMESTAMP" />
+    <result column="decl_time" property="declTime" jdbcType="TIMESTAMP" />
+    <result column="input_date" property="inputDate" jdbcType="TIMESTAMP" />
+    <result column="op_type" property="opType" jdbcType="VARCHAR" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+    <result column="decl_status" property="declStatus" jdbcType="VARCHAR" />
+    <result column="decl_mode" property="declMode" jdbcType="VARCHAR" />
+    <result column="message_id" property="messageId" jdbcType="VARCHAR" />
+    <result column="cus_flag" property="cusFlag" jdbcType="BIT" />
+    <result column="ciq_flag" property="ciqFlag" jdbcType="BIT" />
+    <result column="central_id" property="centralId" jdbcType="INTEGER" />
+    <result column="cus_message_status_logistics" property="cusMessageStatusLogistics" jdbcType="VARCHAR" />
+    <result column="cus_logistics_return_info" property="cusLogisticsReturnInfo" jdbcType="VARCHAR" />
+    <result column="ciq_message_status_logistics" property="ciqMessageStatusLogistics" jdbcType="VARCHAR" />
+    <result column="ciq_logistics_return_info" property="ciqLogisticsReturnInfo" jdbcType="VARCHAR" />
+    <result column="create_at" property="createAt" jdbcType="TIMESTAMP" />
+    <result column="create_user_id" property="createUserId" jdbcType="INTEGER" />
+    <result column="update_at" property="updateAt" jdbcType="TIMESTAMP" />
+    <result column="update_user_id" property="updateUserId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, decl_ent_id, e_h_s_ent_id, customs_code, ciq_org_code, ent_loading_no, i_e_port, 
+    pack_no, gross_weight, traf_mode, tran_no, vayage_no, bill_no, domestic_traf_no, 
+    loc_code, load_date, decl_time, input_date, op_type, notes, decl_status, decl_mode, 
+    message_id, cus_flag, ciq_flag, central_id, cus_message_status_logistics, cus_logistics_return_info, 
+    ciq_message_status_logistics, ciq_logistics_return_info, create_at, create_user_id, 
+    update_at, update_user_id
+  </sql>
+  <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ex_logistics_head
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ex_logistics_head
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsHead" >
+    insert into ex_logistics_head (id, decl_ent_id, e_h_s_ent_id, 
+      customs_code, ciq_org_code, ent_loading_no, 
+      i_e_port, pack_no, gross_weight, 
+      traf_mode, tran_no, vayage_no, 
+      bill_no, domestic_traf_no, loc_code, 
+      load_date, decl_time, input_date, 
+      op_type, notes, decl_status, 
+      decl_mode, message_id, cus_flag, 
+      ciq_flag, central_id, cus_message_status_logistics, 
+      cus_logistics_return_info, ciq_message_status_logistics, 
+      ciq_logistics_return_info, create_at, create_user_id, 
+      update_at, update_user_id)
+    values (#{id,jdbcType=INTEGER}, #{declEntId,jdbcType=INTEGER}, #{eHSEntId,jdbcType=INTEGER}, 
+      #{customsCode,jdbcType=VARCHAR}, #{ciqOrgCode,jdbcType=VARCHAR}, #{entLoadingNo,jdbcType=VARCHAR}, 
+      #{iEPort,jdbcType=VARCHAR}, #{packNo,jdbcType=DECIMAL}, #{grossWeight,jdbcType=DECIMAL}, 
+      #{trafMode,jdbcType=VARCHAR}, #{tranNo,jdbcType=VARCHAR}, #{vayageNo,jdbcType=VARCHAR}, 
+      #{billNo,jdbcType=VARCHAR}, #{domesticTrafNo,jdbcType=VARCHAR}, #{locCode,jdbcType=VARCHAR}, 
+      #{loadDate,jdbcType=TIMESTAMP}, #{declTime,jdbcType=TIMESTAMP}, #{inputDate,jdbcType=TIMESTAMP}, 
+      #{opType,jdbcType=VARCHAR}, #{notes,jdbcType=VARCHAR}, #{declStatus,jdbcType=VARCHAR}, 
+      #{declMode,jdbcType=VARCHAR}, #{messageId,jdbcType=VARCHAR}, #{cusFlag,jdbcType=BIT}, 
+      #{ciqFlag,jdbcType=BIT}, #{centralId,jdbcType=INTEGER}, #{cusMessageStatusLogistics,jdbcType=VARCHAR}, 
+      #{cusLogisticsReturnInfo,jdbcType=VARCHAR}, #{ciqMessageStatusLogistics,jdbcType=VARCHAR}, 
+      #{ciqLogisticsReturnInfo,jdbcType=VARCHAR}, #{createAt,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=INTEGER}, 
+      #{updateAt,jdbcType=TIMESTAMP}, #{updateUserId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsHead" >
+    insert into ex_logistics_head
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="declEntId != null" >
+        decl_ent_id,
+      </if>
+      <if test="eHSEntId != null" >
+        e_h_s_ent_id,
+      </if>
+      <if test="customsCode != null" >
+        customs_code,
+      </if>
+      <if test="ciqOrgCode != null" >
+        ciq_org_code,
+      </if>
+      <if test="entLoadingNo != null" >
+        ent_loading_no,
+      </if>
+      <if test="iEPort != null" >
+        i_e_port,
+      </if>
+      <if test="packNo != null" >
+        pack_no,
+      </if>
+      <if test="grossWeight != null" >
+        gross_weight,
+      </if>
+      <if test="trafMode != null" >
+        traf_mode,
+      </if>
+      <if test="tranNo != null" >
+        tran_no,
+      </if>
+      <if test="vayageNo != null" >
+        vayage_no,
+      </if>
+      <if test="billNo != null" >
+        bill_no,
+      </if>
+      <if test="domesticTrafNo != null" >
+        domestic_traf_no,
+      </if>
+      <if test="locCode != null" >
+        loc_code,
+      </if>
+      <if test="loadDate != null" >
+        load_date,
+      </if>
+      <if test="declTime != null" >
+        decl_time,
+      </if>
+      <if test="inputDate != null" >
+        input_date,
+      </if>
+      <if test="opType != null" >
+        op_type,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+      <if test="declStatus != null" >
+        decl_status,
+      </if>
+      <if test="declMode != null" >
+        decl_mode,
+      </if>
+      <if test="messageId != null" >
+        message_id,
+      </if>
+      <if test="cusFlag != null" >
+        cus_flag,
+      </if>
+      <if test="ciqFlag != null" >
+        ciq_flag,
+      </if>
+      <if test="centralId != null" >
+        central_id,
+      </if>
+      <if test="cusMessageStatusLogistics != null" >
+        cus_message_status_logistics,
+      </if>
+      <if test="cusLogisticsReturnInfo != null" >
+        cus_logistics_return_info,
+      </if>
+      <if test="ciqMessageStatusLogistics != null" >
+        ciq_message_status_logistics,
+      </if>
+      <if test="ciqLogisticsReturnInfo != null" >
+        ciq_logistics_return_info,
+      </if>
+      <if test="createAt != null" >
+        create_at,
+      </if>
+      <if test="createUserId != null" >
+        create_user_id,
+      </if>
+      <if test="updateAt != null" >
+        update_at,
+      </if>
+      <if test="updateUserId != null" >
+        update_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="declEntId != null" >
+        #{declEntId,jdbcType=INTEGER},
+      </if>
+      <if test="eHSEntId != null" >
+        #{eHSEntId,jdbcType=INTEGER},
+      </if>
+      <if test="customsCode != null" >
+        #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrgCode != null" >
+        #{ciqOrgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="entLoadingNo != null" >
+        #{entLoadingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="iEPort != null" >
+        #{iEPort,jdbcType=VARCHAR},
+      </if>
+      <if test="packNo != null" >
+        #{packNo,jdbcType=DECIMAL},
+      </if>
+      <if test="grossWeight != null" >
+        #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="trafMode != null" >
+        #{trafMode,jdbcType=VARCHAR},
+      </if>
+      <if test="tranNo != null" >
+        #{tranNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vayageNo != null" >
+        #{vayageNo,jdbcType=VARCHAR},
+      </if>
+      <if test="billNo != null" >
+        #{billNo,jdbcType=VARCHAR},
+      </if>
+      <if test="domesticTrafNo != null" >
+        #{domesticTrafNo,jdbcType=VARCHAR},
+      </if>
+      <if test="locCode != null" >
+        #{locCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loadDate != null" >
+        #{loadDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="declTime != null" >
+        #{declTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputDate != null" >
+        #{inputDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opType != null" >
+        #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="declStatus != null" >
+        #{declStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="declMode != null" >
+        #{declMode,jdbcType=VARCHAR},
+      </if>
+      <if test="messageId != null" >
+        #{messageId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusFlag != null" >
+        #{cusFlag,jdbcType=BIT},
+      </if>
+      <if test="ciqFlag != null" >
+        #{ciqFlag,jdbcType=BIT},
+      </if>
+      <if test="centralId != null" >
+        #{centralId,jdbcType=INTEGER},
+      </if>
+      <if test="cusMessageStatusLogistics != null" >
+        #{cusMessageStatusLogistics,jdbcType=VARCHAR},
+      </if>
+      <if test="cusLogisticsReturnInfo != null" >
+        #{cusLogisticsReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqMessageStatusLogistics != null" >
+        #{ciqMessageStatusLogistics,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqLogisticsReturnInfo != null" >
+        #{ciqLogisticsReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=INTEGER},
+      </if>
+      <if test="updateAt != null" >
+        #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserId != null" >
+        #{updateUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsHead" >
+    update ex_logistics_head
+    <set >
+      <if test="declEntId != null" >
+        decl_ent_id = #{declEntId,jdbcType=INTEGER},
+      </if>
+      <if test="eHSEntId != null" >
+        e_h_s_ent_id = #{eHSEntId,jdbcType=INTEGER},
+      </if>
+      <if test="customsCode != null" >
+        customs_code = #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrgCode != null" >
+        ciq_org_code = #{ciqOrgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="entLoadingNo != null" >
+        ent_loading_no = #{entLoadingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="iEPort != null" >
+        i_e_port = #{iEPort,jdbcType=VARCHAR},
+      </if>
+      <if test="packNo != null" >
+        pack_no = #{packNo,jdbcType=DECIMAL},
+      </if>
+      <if test="grossWeight != null" >
+        gross_weight = #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="trafMode != null" >
+        traf_mode = #{trafMode,jdbcType=VARCHAR},
+      </if>
+      <if test="tranNo != null" >
+        tran_no = #{tranNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vayageNo != null" >
+        vayage_no = #{vayageNo,jdbcType=VARCHAR},
+      </if>
+      <if test="billNo != null" >
+        bill_no = #{billNo,jdbcType=VARCHAR},
+      </if>
+      <if test="domesticTrafNo != null" >
+        domestic_traf_no = #{domesticTrafNo,jdbcType=VARCHAR},
+      </if>
+      <if test="locCode != null" >
+        loc_code = #{locCode,jdbcType=VARCHAR},
+      </if>
+      <if test="loadDate != null" >
+        load_date = #{loadDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="declTime != null" >
+        decl_time = #{declTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputDate != null" >
+        input_date = #{inputDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opType != null" >
+        op_type = #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="declStatus != null" >
+        decl_status = #{declStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="declMode != null" >
+        decl_mode = #{declMode,jdbcType=VARCHAR},
+      </if>
+      <if test="messageId != null" >
+        message_id = #{messageId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusFlag != null" >
+        cus_flag = #{cusFlag,jdbcType=BIT},
+      </if>
+      <if test="ciqFlag != null" >
+        ciq_flag = #{ciqFlag,jdbcType=BIT},
+      </if>
+      <if test="centralId != null" >
+        central_id = #{centralId,jdbcType=INTEGER},
+      </if>
+      <if test="cusMessageStatusLogistics != null" >
+        cus_message_status_logistics = #{cusMessageStatusLogistics,jdbcType=VARCHAR},
+      </if>
+      <if test="cusLogisticsReturnInfo != null" >
+        cus_logistics_return_info = #{cusLogisticsReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqMessageStatusLogistics != null" >
+        ciq_message_status_logistics = #{ciqMessageStatusLogistics,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqLogisticsReturnInfo != null" >
+        ciq_logistics_return_info = #{ciqLogisticsReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        create_at = #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=INTEGER},
+      </if>
+      <if test="updateAt != null" >
+        update_at = #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserId != null" >
+        update_user_id = #{updateUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsHead" >
+    update ex_logistics_head
+    set decl_ent_id = #{declEntId,jdbcType=INTEGER},
+      e_h_s_ent_id = #{eHSEntId,jdbcType=INTEGER},
+      customs_code = #{customsCode,jdbcType=VARCHAR},
+      ciq_org_code = #{ciqOrgCode,jdbcType=VARCHAR},
+      ent_loading_no = #{entLoadingNo,jdbcType=VARCHAR},
+      i_e_port = #{iEPort,jdbcType=VARCHAR},
+      pack_no = #{packNo,jdbcType=DECIMAL},
+      gross_weight = #{grossWeight,jdbcType=DECIMAL},
+      traf_mode = #{trafMode,jdbcType=VARCHAR},
+      tran_no = #{tranNo,jdbcType=VARCHAR},
+      vayage_no = #{vayageNo,jdbcType=VARCHAR},
+      bill_no = #{billNo,jdbcType=VARCHAR},
+      domestic_traf_no = #{domesticTrafNo,jdbcType=VARCHAR},
+      loc_code = #{locCode,jdbcType=VARCHAR},
+      load_date = #{loadDate,jdbcType=TIMESTAMP},
+      decl_time = #{declTime,jdbcType=TIMESTAMP},
+      input_date = #{inputDate,jdbcType=TIMESTAMP},
+      op_type = #{opType,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR},
+      decl_status = #{declStatus,jdbcType=VARCHAR},
+      decl_mode = #{declMode,jdbcType=VARCHAR},
+      message_id = #{messageId,jdbcType=VARCHAR},
+      cus_flag = #{cusFlag,jdbcType=BIT},
+      ciq_flag = #{ciqFlag,jdbcType=BIT},
+      central_id = #{centralId,jdbcType=INTEGER},
+      cus_message_status_logistics = #{cusMessageStatusLogistics,jdbcType=VARCHAR},
+      cus_logistics_return_info = #{cusLogisticsReturnInfo,jdbcType=VARCHAR},
+      ciq_message_status_logistics = #{ciqMessageStatusLogistics,jdbcType=VARCHAR},
+      ciq_logistics_return_info = #{ciqLogisticsReturnInfo,jdbcType=VARCHAR},
+      create_at = #{createAt,jdbcType=TIMESTAMP},
+      create_user_id = #{createUserId,jdbcType=INTEGER},
+      update_at = #{updateAt,jdbcType=TIMESTAMP},
+      update_user_id = #{updateUserId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

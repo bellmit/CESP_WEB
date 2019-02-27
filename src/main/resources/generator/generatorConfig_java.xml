@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+    <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+      <property name="mappers" value="com.yunyitg.cesp.common.mapper.MyMapper"/>
+      <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+      <property name="caseSensitive" value="true"/>
+      <property name="forceAnnotation" value="true"/>
+    </plugin>
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://localhost:3306/cesp_web2?useSSL=false"
+                    userId="root"
+                    password="rain618961">
+    </jdbcConnection>
+
+    <javaModelGenerator targetPackage="com.yunyitg.cesp.core.imports.order.entity" targetProject="G:\cesp"/>
+
+    <sqlMapGenerator targetPackage="com.yunyitg.cesp.core.imports.order.mapper" targetProject="G:\cesp"/>
+
+    <javaClientGenerator targetPackage="com.yunyitg.cesp.core.imports.order.dao" targetProject="G:\cesp" type="XMLMAPPER" />
+
+    <table tableName="%" >
+      <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+    </table>
+  </context>
+</generatorConfiguration>

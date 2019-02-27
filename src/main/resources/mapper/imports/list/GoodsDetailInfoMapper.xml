@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.list.dao.GoodsDetailInfoMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.list.entity.GoodsDetailInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="elist_order_id" jdbcType="INTEGER" property="elistOrderId" />
+    <result column="seq" jdbcType="DECIMAL" property="seq" />
+    <result column="ciq_goods_no" jdbcType="VARCHAR" property="ciqGoodsNo" />
+    <result column="cus_goods_no" jdbcType="VARCHAR" property="cusGoodsNo" />
+    <result column="ent_goods_no" jdbcType="VARCHAR" property="entGoodsNo" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="gname" jdbcType="VARCHAR" property="gname" />
+    <result column="goods_style" jdbcType="VARCHAR" property="goodsStyle" />
+    <result column="hs_code" jdbcType="VARCHAR" property="hsCode" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
+    <result column="bar_code" jdbcType="VARCHAR" property="barCode" />
+    <result column="origin_country" jdbcType="VARCHAR" property="originCountry" />
+    <result column="discharge_place" jdbcType="VARCHAR" property="dischargePlace" />
+    <result column="goods_batch_no" jdbcType="VARCHAR" property="goodsBatchNo" />
+    <result column="license_no" jdbcType="VARCHAR" property="licenseNo" />
+    <result column="appr_no" jdbcType="VARCHAR" property="apprNo" />
+    <result column="package_type" jdbcType="VARCHAR" property="packageType" />
+    <result column="pack_num" jdbcType="DECIMAL" property="packNum" />
+    <result column="qty" jdbcType="DECIMAL" property="qty" />
+    <result column="gunit" jdbcType="VARCHAR" property="gunit" />
+    <result column="std_unit" jdbcType="VARCHAR" property="stdUnit" />
+    <result column="std_qty" jdbcType="DECIMAL" property="stdQty" />
+    <result column="sec_unit" jdbcType="VARCHAR" property="secUnit" />
+    <result column="sec_qty" jdbcType="DECIMAL" property="secQty" />
+    <result column="gross_weight" jdbcType="DECIMAL" property="grossWeight" />
+    <result column="unit_price" jdbcType="DECIMAL" property="unitPrice" />
+    <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+  </resultMap>
+</mapper>

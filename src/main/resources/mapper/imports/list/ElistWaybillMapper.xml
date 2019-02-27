@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.list.dao.ElistWaybillMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.list.entity.ElistWaybill">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="elist_detail_info_id" jdbcType="INTEGER" property="elistDetailInfoId" />
+    <result column="ent_waybill_no" jdbcType="VARCHAR" property="entWaybillNo" />
+    <result column="ehs_ent_id" jdbcType="INTEGER" property="ehsEntId" />
+    <result column="gross_weight" jdbcType="DECIMAL" property="grossWeight" />
+    <result column="net_wt" jdbcType="DECIMAL" property="netWt" />
+    <result column="fee_rate" jdbcType="DECIMAL" property="feeRate" />
+    <result column="fee_mark" jdbcType="VARCHAR" property="feeMark" />
+    <result column="insur_rate" jdbcType="DECIMAL" property="insurRate" />
+    <result column="other_rate" jdbcType="DECIMAL" property="otherRate" />
+    <result column="recipient_name_c" jdbcType="VARCHAR" property="recipientNameC" />
+    <result column="recipient_name_e" jdbcType="VARCHAR" property="recipientNameE" />
+    <result column="recipient_card_type" jdbcType="VARCHAR" property="recipientCardType" />
+    <result column="recipient_no" jdbcType="VARCHAR" property="recipientNo" />
+    <result column="recipient_country" jdbcType="VARCHAR" property="recipientCountry" />
+    <result column="recipient_provinces_code" jdbcType="VARCHAR" property="recipientProvincesCode" />
+    <result column="recipient_addr_c" jdbcType="VARCHAR" property="recipientAddrC" />
+    <result column="recipient_addr_e" jdbcType="VARCHAR" property="recipientAddrE" />
+    <result column="recipient_tel" jdbcType="VARCHAR" property="recipientTel" />
+    <result column="shipper_c" jdbcType="VARCHAR" property="shipperC" />
+    <result column="shipper_e" jdbcType="VARCHAR" property="shipperE" />
+    <result column="shipper_country" jdbcType="VARCHAR" property="shipperCountry" />
+    <result column="shipper_provinces_code" jdbcType="VARCHAR" property="shipperProvincesCode" />
+    <result column="shipper_addr_c" jdbcType="VARCHAR" property="shipperAddrC" />
+    <result column="shipper_addr_e" jdbcType="VARCHAR" property="shipperAddrE" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyitg.cesp.core.exports.list.dao.ExGoodsDetailInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.exports.list.entity.ExGoodsDetailInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="e_list_order_id" property="eListOrderId" jdbcType="INTEGER" />
+    <result column="seq" property="seq" jdbcType="DECIMAL" />
+    <result column="ciq_goods_no" property="ciqGoodsNo" jdbcType="VARCHAR" />
+    <result column="cus_goods_no" property="cusGoodsNo" jdbcType="VARCHAR" />
+    <result column="ent_goods_no" property="entGoodsNo" jdbcType="VARCHAR" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="g_name" property="gName" jdbcType="VARCHAR" />
+    <result column="goods_style" property="goodsStyle" jdbcType="VARCHAR" />
+    <result column="h_s_code" property="hSCode" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="bar_code" property="barCode" jdbcType="VARCHAR" />
+    <result column="origin_country" property="originCountry" jdbcType="VARCHAR" />
+    <result column="origin_place" property="originPlace" jdbcType="VARCHAR" />
+    <result column="manufacturer" property="manufacturer" jdbcType="VARCHAR" />
+    <result column="manufacturer_id" property="manufacturerId" jdbcType="VARCHAR" />
+    <result column="batch_numbers" property="batchNumbers" jdbcType="VARCHAR" />
+    <result column="production_date" property="productionDate" jdbcType="VARCHAR" />
+    <result column="ip_code" property="ipCode" jdbcType="VARCHAR" />
+    <result column="discharge_place" property="dischargePlace" jdbcType="VARCHAR" />
+    <result column="goods_batch_no" property="goodsBatchNo" jdbcType="VARCHAR" />
+    <result column="license_no" property="licenseNo" jdbcType="VARCHAR" />
+    <result column="appr_no" property="apprNo" jdbcType="VARCHAR" />
+    <result column="org_cus_decl_no" property="orgCusDeclNo" jdbcType="VARCHAR" />
+    <result column="org_cus_decl_shipper" property="orgCusDeclShipper" jdbcType="VARCHAR" />
+    <result column="org_bill_no" property="orgBillNo" jdbcType="VARCHAR" />
+    <result column="package_type" property="packageType" jdbcType="VARCHAR" />
+    <result column="pack_num" property="packNum" jdbcType="DECIMAL" />
+    <result column="qty" property="qty" jdbcType="DECIMAL" />
+    <result column="g_unit" property="gUnit" jdbcType="VARCHAR" />
+    <result column="std_unit" property="stdUnit" jdbcType="VARCHAR" />
+    <result column="std_qty" property="stdQty" jdbcType="DECIMAL" />
+    <result column="sec_unit" property="secUnit" jdbcType="VARCHAR" />
+    <result column="sec_qty" property="secQty" jdbcType="DECIMAL" />
+    <result column="gross_weight" property="grossWeight" jdbcType="DECIMAL" />
+    <result column="unit_price" property="unitPrice" jdbcType="DECIMAL" />
+    <result column="total_price" property="totalPrice" jdbcType="DECIMAL" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, e_list_order_id, seq, ciq_goods_no, cus_goods_no, ent_goods_no, goods_name, g_name, 
+    goods_style, h_s_code, brand, bar_code, origin_country, origin_place, manufacturer, 
+    manufacturer_id, batch_numbers, production_date, ip_code, discharge_place, goods_batch_no, 
+    license_no, appr_no, org_cus_decl_no, org_cus_decl_shipper, org_bill_no, package_type, 
+    pack_num, qty, g_unit, std_unit, std_qty, sec_unit, sec_qty, gross_weight, unit_price, 
+    total_price, notes
+  </sql>
+  <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ex_goods_detail_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ex_goods_detail_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExGoodsDetailInfo" >
+    insert into ex_goods_detail_info (id, e_list_order_id, seq, 
+      ciq_goods_no, cus_goods_no, ent_goods_no, 
+      goods_name, g_name, goods_style, 
+      h_s_code, brand, bar_code, 
+      origin_country, origin_place, manufacturer, 
+      manufacturer_id, batch_numbers, production_date, 
+      ip_code, discharge_place, goods_batch_no, 
+      license_no, appr_no, org_cus_decl_no, 
+      org_cus_decl_shipper, org_bill_no, package_type, 
+      pack_num, qty, g_unit, 
+      std_unit, std_qty, sec_unit, 
+      sec_qty, gross_weight, unit_price, 
+      total_price, notes)
+    values (#{id,jdbcType=INTEGER}, #{eListOrderId,jdbcType=INTEGER}, #{seq,jdbcType=DECIMAL}, 
+      #{ciqGoodsNo,jdbcType=VARCHAR}, #{cusGoodsNo,jdbcType=VARCHAR}, #{entGoodsNo,jdbcType=VARCHAR}, 
+      #{goodsName,jdbcType=VARCHAR}, #{gName,jdbcType=VARCHAR}, #{goodsStyle,jdbcType=VARCHAR}, 
+      #{hSCode,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, #{barCode,jdbcType=VARCHAR}, 
+      #{originCountry,jdbcType=VARCHAR}, #{originPlace,jdbcType=VARCHAR}, #{manufacturer,jdbcType=VARCHAR}, 
+      #{manufacturerId,jdbcType=VARCHAR}, #{batchNumbers,jdbcType=VARCHAR}, #{productionDate,jdbcType=VARCHAR}, 
+      #{ipCode,jdbcType=VARCHAR}, #{dischargePlace,jdbcType=VARCHAR}, #{goodsBatchNo,jdbcType=VARCHAR}, 
+      #{licenseNo,jdbcType=VARCHAR}, #{apprNo,jdbcType=VARCHAR}, #{orgCusDeclNo,jdbcType=VARCHAR}, 
+      #{orgCusDeclShipper,jdbcType=VARCHAR}, #{orgBillNo,jdbcType=VARCHAR}, #{packageType,jdbcType=VARCHAR}, 
+      #{packNum,jdbcType=DECIMAL}, #{qty,jdbcType=DECIMAL}, #{gUnit,jdbcType=VARCHAR}, 
+      #{stdUnit,jdbcType=VARCHAR}, #{stdQty,jdbcType=DECIMAL}, #{secUnit,jdbcType=VARCHAR}, 
+      #{secQty,jdbcType=DECIMAL}, #{grossWeight,jdbcType=DECIMAL}, #{unitPrice,jdbcType=DECIMAL}, 
+      #{totalPrice,jdbcType=DECIMAL}, #{notes,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExGoodsDetailInfo" >
+    insert into ex_goods_detail_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="eListOrderId != null" >
+        e_list_order_id,
+      </if>
+      <if test="seq != null" >
+        seq,
+      </if>
+      <if test="ciqGoodsNo != null" >
+        ciq_goods_no,
+      </if>
+      <if test="cusGoodsNo != null" >
+        cus_goods_no,
+      </if>
+      <if test="entGoodsNo != null" >
+        ent_goods_no,
+      </if>
+      <if test="goodsName != null" >
+        goods_name,
+      </if>
+      <if test="gName != null" >
+        g_name,
+      </if>
+      <if test="goodsStyle != null" >
+        goods_style,
+      </if>
+      <if test="hSCode != null" >
+        h_s_code,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="barCode != null" >
+        bar_code,
+      </if>
+      <if test="originCountry != null" >
+        origin_country,
+      </if>
+      <if test="originPlace != null" >
+        origin_place,
+      </if>
+      <if test="manufacturer != null" >
+        manufacturer,
+      </if>
+      <if test="manufacturerId != null" >
+        manufacturer_id,
+      </if>
+      <if test="batchNumbers != null" >
+        batch_numbers,
+      </if>
+      <if test="productionDate != null" >
+        production_date,
+      </if>
+      <if test="ipCode != null" >
+        ip_code,
+      </if>
+      <if test="dischargePlace != null" >
+        discharge_place,
+      </if>
+      <if test="goodsBatchNo != null" >
+        goods_batch_no,
+      </if>
+      <if test="licenseNo != null" >
+        license_no,
+      </if>
+      <if test="apprNo != null" >
+        appr_no,
+      </if>
+      <if test="orgCusDeclNo != null" >
+        org_cus_decl_no,
+      </if>
+      <if test="orgCusDeclShipper != null" >
+        org_cus_decl_shipper,
+      </if>
+      <if test="orgBillNo != null" >
+        org_bill_no,
+      </if>
+      <if test="packageType != null" >
+        package_type,
+      </if>
+      <if test="packNum != null" >
+        pack_num,
+      </if>
+      <if test="qty != null" >
+        qty,
+      </if>
+      <if test="gUnit != null" >
+        g_unit,
+      </if>
+      <if test="stdUnit != null" >
+        std_unit,
+      </if>
+      <if test="stdQty != null" >
+        std_qty,
+      </if>
+      <if test="secUnit != null" >
+        sec_unit,
+      </if>
+      <if test="secQty != null" >
+        sec_qty,
+      </if>
+      <if test="grossWeight != null" >
+        gross_weight,
+      </if>
+      <if test="unitPrice != null" >
+        unit_price,
+      </if>
+      <if test="totalPrice != null" >
+        total_price,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="eListOrderId != null" >
+        #{eListOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="seq != null" >
+        #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="ciqGoodsNo != null" >
+        #{ciqGoodsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cusGoodsNo != null" >
+        #{cusGoodsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="entGoodsNo != null" >
+        #{entGoodsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null" >
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="gName != null" >
+        #{gName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsStyle != null" >
+        #{goodsStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="hSCode != null" >
+        #{hSCode,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="barCode != null" >
+        #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="originCountry != null" >
+        #{originCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="originPlace != null" >
+        #{originPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="manufacturer != null" >
+        #{manufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="manufacturerId != null" >
+        #{manufacturerId,jdbcType=VARCHAR},
+      </if>
+      <if test="batchNumbers != null" >
+        #{batchNumbers,jdbcType=VARCHAR},
+      </if>
+      <if test="productionDate != null" >
+        #{productionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="ipCode != null" >
+        #{ipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dischargePlace != null" >
+        #{dischargePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsBatchNo != null" >
+        #{goodsBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseNo != null" >
+        #{licenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="apprNo != null" >
+        #{apprNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCusDeclNo != null" >
+        #{orgCusDeclNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCusDeclShipper != null" >
+        #{orgCusDeclShipper,jdbcType=VARCHAR},
+      </if>
+      <if test="orgBillNo != null" >
+        #{orgBillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="packageType != null" >
+        #{packageType,jdbcType=VARCHAR},
+      </if>
+      <if test="packNum != null" >
+        #{packNum,jdbcType=DECIMAL},
+      </if>
+      <if test="qty != null" >
+        #{qty,jdbcType=DECIMAL},
+      </if>
+      <if test="gUnit != null" >
+        #{gUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="stdUnit != null" >
+        #{stdUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="stdQty != null" >
+        #{stdQty,jdbcType=DECIMAL},
+      </if>
+      <if test="secUnit != null" >
+        #{secUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="secQty != null" >
+        #{secQty,jdbcType=DECIMAL},
+      </if>
+      <if test="grossWeight != null" >
+        #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="unitPrice != null" >
+        #{unitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPrice != null" >
+        #{totalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExGoodsDetailInfo" >
+    update ex_goods_detail_info
+    <set >
+      <if test="eListOrderId != null" >
+        e_list_order_id = #{eListOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="seq != null" >
+        seq = #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="ciqGoodsNo != null" >
+        ciq_goods_no = #{ciqGoodsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cusGoodsNo != null" >
+        cus_goods_no = #{cusGoodsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="entGoodsNo != null" >
+        ent_goods_no = #{entGoodsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null" >
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="gName != null" >
+        g_name = #{gName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsStyle != null" >
+        goods_style = #{goodsStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="hSCode != null" >
+        h_s_code = #{hSCode,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="barCode != null" >
+        bar_code = #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="originCountry != null" >
+        origin_country = #{originCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="originPlace != null" >
+        origin_place = #{originPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="manufacturer != null" >
+        manufacturer = #{manufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="manufacturerId != null" >
+        manufacturer_id = #{manufacturerId,jdbcType=VARCHAR},
+      </if>
+      <if test="batchNumbers != null" >
+        batch_numbers = #{batchNumbers,jdbcType=VARCHAR},
+      </if>
+      <if test="productionDate != null" >
+        production_date = #{productionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="ipCode != null" >
+        ip_code = #{ipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dischargePlace != null" >
+        discharge_place = #{dischargePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsBatchNo != null" >
+        goods_batch_no = #{goodsBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseNo != null" >
+        license_no = #{licenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="apprNo != null" >
+        appr_no = #{apprNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCusDeclNo != null" >
+        org_cus_decl_no = #{orgCusDeclNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCusDeclShipper != null" >
+        org_cus_decl_shipper = #{orgCusDeclShipper,jdbcType=VARCHAR},
+      </if>
+      <if test="orgBillNo != null" >
+        org_bill_no = #{orgBillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="packageType != null" >
+        package_type = #{packageType,jdbcType=VARCHAR},
+      </if>
+      <if test="packNum != null" >
+        pack_num = #{packNum,jdbcType=DECIMAL},
+      </if>
+      <if test="qty != null" >
+        qty = #{qty,jdbcType=DECIMAL},
+      </if>
+      <if test="gUnit != null" >
+        g_unit = #{gUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="stdUnit != null" >
+        std_unit = #{stdUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="stdQty != null" >
+        std_qty = #{stdQty,jdbcType=DECIMAL},
+      </if>
+      <if test="secUnit != null" >
+        sec_unit = #{secUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="secQty != null" >
+        sec_qty = #{secQty,jdbcType=DECIMAL},
+      </if>
+      <if test="grossWeight != null" >
+        gross_weight = #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="unitPrice != null" >
+        unit_price = #{unitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalPrice != null" >
+        total_price = #{totalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExGoodsDetailInfo" >
+    update ex_goods_detail_info
+    set e_list_order_id = #{eListOrderId,jdbcType=INTEGER},
+      seq = #{seq,jdbcType=DECIMAL},
+      ciq_goods_no = #{ciqGoodsNo,jdbcType=VARCHAR},
+      cus_goods_no = #{cusGoodsNo,jdbcType=VARCHAR},
+      ent_goods_no = #{entGoodsNo,jdbcType=VARCHAR},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      g_name = #{gName,jdbcType=VARCHAR},
+      goods_style = #{goodsStyle,jdbcType=VARCHAR},
+      h_s_code = #{hSCode,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      bar_code = #{barCode,jdbcType=VARCHAR},
+      origin_country = #{originCountry,jdbcType=VARCHAR},
+      origin_place = #{originPlace,jdbcType=VARCHAR},
+      manufacturer = #{manufacturer,jdbcType=VARCHAR},
+      manufacturer_id = #{manufacturerId,jdbcType=VARCHAR},
+      batch_numbers = #{batchNumbers,jdbcType=VARCHAR},
+      production_date = #{productionDate,jdbcType=VARCHAR},
+      ip_code = #{ipCode,jdbcType=VARCHAR},
+      discharge_place = #{dischargePlace,jdbcType=VARCHAR},
+      goods_batch_no = #{goodsBatchNo,jdbcType=VARCHAR},
+      license_no = #{licenseNo,jdbcType=VARCHAR},
+      appr_no = #{apprNo,jdbcType=VARCHAR},
+      org_cus_decl_no = #{orgCusDeclNo,jdbcType=VARCHAR},
+      org_cus_decl_shipper = #{orgCusDeclShipper,jdbcType=VARCHAR},
+      org_bill_no = #{orgBillNo,jdbcType=VARCHAR},
+      package_type = #{packageType,jdbcType=VARCHAR},
+      pack_num = #{packNum,jdbcType=DECIMAL},
+      qty = #{qty,jdbcType=DECIMAL},
+      g_unit = #{gUnit,jdbcType=VARCHAR},
+      std_unit = #{stdUnit,jdbcType=VARCHAR},
+      std_qty = #{stdQty,jdbcType=DECIMAL},
+      sec_unit = #{secUnit,jdbcType=VARCHAR},
+      sec_qty = #{secQty,jdbcType=DECIMAL},
+      gross_weight = #{grossWeight,jdbcType=DECIMAL},
+      unit_price = #{unitPrice,jdbcType=DECIMAL},
+      total_price = #{totalPrice,jdbcType=DECIMAL},
+      notes = #{notes,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

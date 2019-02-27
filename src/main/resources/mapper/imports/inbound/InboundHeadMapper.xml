@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.inbound.dao.InboundHeadMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.inbound.entity.InboundHead">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="decl_ent_id" jdbcType="INTEGER" property="declEntId" />
+    <result column="eb_ent_id" jdbcType="INTEGER" property="ebEntId" />
+    <result column="ent_inbound_no" jdbcType="VARCHAR" property="entInboundNo" />
+    <result column="eport_inbound_no" jdbcType="VARCHAR" property="eportInboundNo" />
+    <result column="ciq_inbound_no" jdbcType="VARCHAR" property="ciqInboundNo" />
+    <result column="cis_inbound_no" jdbcType="VARCHAR" property="cisInboundNo" />
+    <result column="discharge_place" jdbcType="VARCHAR" property="dischargePlace" />
+    <result column="customs_code" jdbcType="VARCHAR" property="customsCode" />
+    <result column="ciq_org_code" jdbcType="VARCHAR" property="ciqOrgCode" />
+    <result column="corr_doc_type" jdbcType="VARCHAR" property="corrDocType" />
+    <result column="ems_no" jdbcType="VARCHAR" property="emsNo" />
+    <result column="trade_mode" jdbcType="VARCHAR" property="tradeMode" />
+    <result column="recipient" jdbcType="VARCHAR" property="recipient" />
+    <result column="shipper" jdbcType="VARCHAR" property="shipper" />
+    <result column="inbound_port" jdbcType="VARCHAR" property="inboundPort" />
+    <result column="country_code" jdbcType="VARCHAR" property="countryCode" />
+    <result column="inbound_date" jdbcType="TIMESTAMP" property="inboundDate" />
+    <result column="input_date" jdbcType="TIMESTAMP" property="inputDate" />
+    <result column="op_type" jdbcType="VARCHAR" property="opType" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="decl_status" jdbcType="VARCHAR" property="declStatus" />
+    <result column="decl_mode" jdbcType="VARCHAR" property="declMode" />
+    <result column="message_id" jdbcType="VARCHAR" property="messageId" />
+    <result column="function_code" jdbcType="VARCHAR" property="functionCode" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="update_user_id" jdbcType="INTEGER" property="updateUserId" />
+  </resultMap>
+</mapper>

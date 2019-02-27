@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.goods.dao.GoodsContentMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.goods.entity.GoodsContent">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goods_reg_head_id" jdbcType="INTEGER" property="goodsRegHeadId" />
+    <result column="decl_ent_id" jdbcType="INTEGER" property="declEntId" />
+    <result column="eb_ent_id" jdbcType="INTEGER" property="ebEntId" />
+    <result column="ebp_ent_id" jdbcType="INTEGER" property="ebpEntId" />
+    <result column="customs_code" jdbcType="VARCHAR" property="customsCode" />
+    <result column="ciq_org_code" jdbcType="VARCHAR" property="ciqOrgCode" />
+    <result column="seq" jdbcType="DECIMAL" property="seq" />
+    <result column="ent_goods_no" jdbcType="VARCHAR" property="entGoodsNo" />
+    <result column="eport_goods_no" jdbcType="VARCHAR" property="eportGoodsNo" />
+    <result column="ciq_goods_no" jdbcType="VARCHAR" property="ciqGoodsNo" />
+    <result column="cus_goods_no" jdbcType="VARCHAR" property="cusGoodsNo" />
+    <result column="ems_no" jdbcType="VARCHAR" property="emsNo" />
+    <result column="item_no" jdbcType="VARCHAR" property="itemNo" />
+    <result column="shelf_gname" jdbcType="VARCHAR" property="shelfGname" />
+    <result column="ncad_code" jdbcType="VARCHAR" property="ncadCode" />
+    <result column="hs_code" jdbcType="VARCHAR" property="hsCode" />
+    <result column="bar_code" jdbcType="VARCHAR" property="barCode" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_style" jdbcType="VARCHAR" property="goodsStyle" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
+    <result column="gunit" jdbcType="VARCHAR" property="gunit" />
+    <result column="std_unit" jdbcType="VARCHAR" property="stdUnit" />
+    <result column="sec_unit" jdbcType="VARCHAR" property="secUnit" />
+    <result column="reg_price" jdbcType="DECIMAL" property="regPrice" />
+    <result column="gift_flag" jdbcType="VARCHAR" property="giftFlag" />
+    <result column="origin_country" jdbcType="VARCHAR" property="originCountry" />
+    <result column="quality" jdbcType="VARCHAR" property="quality" />
+    <result column="qualify_certify" jdbcType="VARCHAR" property="qualifyCertify" />
+    <result column="manufactory" jdbcType="VARCHAR" property="manufactory" />
+    <result column="net_wt" jdbcType="DECIMAL" property="netWt" />
+    <result column="gross_wt" jdbcType="DECIMAL" property="grossWt" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="cus_message_status_goods" jdbcType="VARCHAR" property="cusMessageStatusGoods" />
+    <result column="cus_goods_return_info" jdbcType="VARCHAR" property="cusGoodsReturnInfo" />
+    <result column="ciq_message_status_goods" jdbcType="VARCHAR" property="ciqMessageStatusGoods" />
+    <result column="ciq_goods_return_info" jdbcType="VARCHAR" property="ciqGoodsReturnInfo" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="update_user_id" jdbcType="INTEGER" property="updateUserId" />
+  </resultMap>
+</mapper>

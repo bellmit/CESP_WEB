@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.load.dao.LoadContentMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.load.entity.LoadContent">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="load_head_id" jdbcType="INTEGER" property="loadHeadId" />
+    <result column="seq" jdbcType="DECIMAL" property="seq" />
+    <result column="ciq_elist_no" jdbcType="VARCHAR" property="ciqElistNo" />
+    <result column="cus_elist_no" jdbcType="VARCHAR" property="cusElistNo" />
+    <result column="ent_waybill_no" jdbcType="VARCHAR" property="entWaybillNo" />
+    <result column="gross_wt" jdbcType="DECIMAL" property="grossWt" />
+    <result column="qty" jdbcType="DECIMAL" property="qty" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="cus_message_status_confirm" jdbcType="VARCHAR" property="cusMessageStatusConfirm" />
+    <result column="cus_confirm_return_info" jdbcType="VARCHAR" property="cusConfirmReturnInfo" />
+  </resultMap>
+</mapper>

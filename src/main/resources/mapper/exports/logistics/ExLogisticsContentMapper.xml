@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyitg.cesp.core.exports.logistics.dao.ExLogisticsContentMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsContent" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="logistics_head_id" property="logisticsHeadId" jdbcType="INTEGER" />
+    <result column="ent_waybill_no" property="entWaybillNo" jdbcType="VARCHAR" />
+    <result column="cus_e_list_no" property="cusEListNo" jdbcType="VARCHAR" />
+    <result column="tray_no" property="trayNo" jdbcType="VARCHAR" />
+    <result column="gross_wt" property="grossWt" jdbcType="DECIMAL" />
+    <result column="qty" property="qty" jdbcType="DECIMAL" />
+    <result column="import_invt_no" property="importInvtNo" jdbcType="VARCHAR" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, logistics_head_id, ent_waybill_no, cus_e_list_no, tray_no, gross_wt, qty, import_invt_no, 
+    notes
+  </sql>
+  <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ex_logistics_content
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ex_logistics_content
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsContent" >
+    insert into ex_logistics_content (id, logistics_head_id, ent_waybill_no, 
+      cus_e_list_no, tray_no, gross_wt, 
+      qty, import_invt_no, notes
+      )
+    values (#{id,jdbcType=INTEGER}, #{logisticsHeadId,jdbcType=INTEGER}, #{entWaybillNo,jdbcType=VARCHAR}, 
+      #{cusEListNo,jdbcType=VARCHAR}, #{trayNo,jdbcType=VARCHAR}, #{grossWt,jdbcType=DECIMAL}, 
+      #{qty,jdbcType=DECIMAL}, #{importInvtNo,jdbcType=VARCHAR}, #{notes,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsContent" >
+    insert into ex_logistics_content
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="logisticsHeadId != null" >
+        logistics_head_id,
+      </if>
+      <if test="entWaybillNo != null" >
+        ent_waybill_no,
+      </if>
+      <if test="cusEListNo != null" >
+        cus_e_list_no,
+      </if>
+      <if test="trayNo != null" >
+        tray_no,
+      </if>
+      <if test="grossWt != null" >
+        gross_wt,
+      </if>
+      <if test="qty != null" >
+        qty,
+      </if>
+      <if test="importInvtNo != null" >
+        import_invt_no,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="logisticsHeadId != null" >
+        #{logisticsHeadId,jdbcType=INTEGER},
+      </if>
+      <if test="entWaybillNo != null" >
+        #{entWaybillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cusEListNo != null" >
+        #{cusEListNo,jdbcType=VARCHAR},
+      </if>
+      <if test="trayNo != null" >
+        #{trayNo,jdbcType=VARCHAR},
+      </if>
+      <if test="grossWt != null" >
+        #{grossWt,jdbcType=DECIMAL},
+      </if>
+      <if test="qty != null" >
+        #{qty,jdbcType=DECIMAL},
+      </if>
+      <if test="importInvtNo != null" >
+        #{importInvtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsContent" >
+    update ex_logistics_content
+    <set >
+      <if test="logisticsHeadId != null" >
+        logistics_head_id = #{logisticsHeadId,jdbcType=INTEGER},
+      </if>
+      <if test="entWaybillNo != null" >
+        ent_waybill_no = #{entWaybillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cusEListNo != null" >
+        cus_e_list_no = #{cusEListNo,jdbcType=VARCHAR},
+      </if>
+      <if test="trayNo != null" >
+        tray_no = #{trayNo,jdbcType=VARCHAR},
+      </if>
+      <if test="grossWt != null" >
+        gross_wt = #{grossWt,jdbcType=DECIMAL},
+      </if>
+      <if test="qty != null" >
+        qty = #{qty,jdbcType=DECIMAL},
+      </if>
+      <if test="importInvtNo != null" >
+        import_invt_no = #{importInvtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.exports.logistics.entity.ExLogisticsContent" >
+    update ex_logistics_content
+    set logistics_head_id = #{logisticsHeadId,jdbcType=INTEGER},
+      ent_waybill_no = #{entWaybillNo,jdbcType=VARCHAR},
+      cus_e_list_no = #{cusEListNo,jdbcType=VARCHAR},
+      tray_no = #{trayNo,jdbcType=VARCHAR},
+      gross_wt = #{grossWt,jdbcType=DECIMAL},
+      qty = #{qty,jdbcType=DECIMAL},
+      import_invt_no = #{importInvtNo,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

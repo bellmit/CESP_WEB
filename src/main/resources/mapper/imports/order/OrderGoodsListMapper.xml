@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.order.dao.OrderGoodsListMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.order.entity.OrderGoodsList">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_detail_id" jdbcType="INTEGER" property="orderDetailId" />
+    <result column="seq" jdbcType="DECIMAL" property="seq" />
+    <result column="ent_goods_no" jdbcType="VARCHAR" property="entGoodsNo" />
+    <result column="ciq_goods_no" jdbcType="VARCHAR" property="ciqGoodsNo" />
+    <result column="cus_goods_no" jdbcType="VARCHAR" property="cusGoodsNo" />
+    <result column="hs_code" jdbcType="VARCHAR" property="hsCode" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_style" jdbcType="VARCHAR" property="goodsStyle" />
+    <result column="goods_describe" jdbcType="VARCHAR" property="goodsDescribe" />
+    <result column="origin_country" jdbcType="VARCHAR" property="originCountry" />
+    <result column="bar_code" jdbcType="VARCHAR" property="barCode" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
+    <result column="qty" jdbcType="DECIMAL" property="qty" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="total" jdbcType="DECIMAL" property="total" />
+    <result column="curr_code" jdbcType="VARCHAR" property="currCode" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_detail_id, seq, ent_goods_no, ciq_goods_no, cus_goods_no, h_s_code, goods_name, 
+    goods_style, goods_describe, origin_country, bar_code, brand, qty, unit, price, total, 
+    curr_code, notes
+  </sql>
+  
+  
+  
+</mapper>

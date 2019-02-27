@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyitg.cesp.core.exports.payment.dao.ExPaymentHeadMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.exports.payment.entity.ExPaymentHead" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="decl_ent_id" property="declEntId" jdbcType="INTEGER" />
+    <result column="pay_ent_id" property="payEntId" jdbcType="INTEGER" />
+    <result column="decl_time" property="declTime" jdbcType="TIMESTAMP" />
+    <result column="op_type" property="opType" jdbcType="VARCHAR" />
+    <result column="i_e_flag" property="iEFlag" jdbcType="VARCHAR" />
+    <result column="customs_code" property="customsCode" jdbcType="VARCHAR" />
+    <result column="ciq_org_code" property="ciqOrgCode" jdbcType="VARCHAR" />
+    <result column="decl_status" property="declStatus" jdbcType="VARCHAR" />
+    <result column="decl_mode" property="declMode" jdbcType="VARCHAR" />
+    <result column="message_id" property="messageId" jdbcType="VARCHAR" />
+    <result column="cus_flag" property="cusFlag" jdbcType="BIT" />
+    <result column="ciq_flag" property="ciqFlag" jdbcType="BIT" />
+    <result column="central_id" property="centralId" jdbcType="INTEGER" />
+    <result column="payment_detail_ids" property="paymentDetailIds" jdbcType="VARCHAR" />
+    <result column="create_at" property="createAt" jdbcType="TIMESTAMP" />
+    <result column="create_user_id" property="createUserId" jdbcType="INTEGER" />
+    <result column="update_at" property="updateAt" jdbcType="TIMESTAMP" />
+    <result column="update_user_id" property="updateUserId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, decl_ent_id, pay_ent_id, decl_time, op_type, i_e_flag, customs_code, ciq_org_code, 
+    decl_status, decl_mode, message_id, cus_flag, ciq_flag, central_id, payment_detail_ids, 
+    create_at, create_user_id, update_at, update_user_id
+  </sql>
+  <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ex_payment_head
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ex_payment_head
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.exports.payment.entity.ExPaymentHead" >
+    insert into ex_payment_head (id, decl_ent_id, pay_ent_id, 
+      decl_time, op_type, i_e_flag, 
+      customs_code, ciq_org_code, decl_status, 
+      decl_mode, message_id, cus_flag, 
+      ciq_flag, central_id, payment_detail_ids, 
+      create_at, create_user_id, update_at, 
+      update_user_id)
+    values (#{id,jdbcType=INTEGER}, #{declEntId,jdbcType=INTEGER}, #{payEntId,jdbcType=INTEGER}, 
+      #{declTime,jdbcType=TIMESTAMP}, #{opType,jdbcType=VARCHAR}, #{iEFlag,jdbcType=VARCHAR}, 
+      #{customsCode,jdbcType=VARCHAR}, #{ciqOrgCode,jdbcType=VARCHAR}, #{declStatus,jdbcType=VARCHAR}, 
+      #{declMode,jdbcType=VARCHAR}, #{messageId,jdbcType=VARCHAR}, #{cusFlag,jdbcType=BIT}, 
+      #{ciqFlag,jdbcType=BIT}, #{centralId,jdbcType=INTEGER}, #{paymentDetailIds,jdbcType=VARCHAR}, 
+      #{createAt,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=INTEGER}, #{updateAt,jdbcType=TIMESTAMP}, 
+      #{updateUserId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.exports.payment.entity.ExPaymentHead" >
+    insert into ex_payment_head
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="declEntId != null" >
+        decl_ent_id,
+      </if>
+      <if test="payEntId != null" >
+        pay_ent_id,
+      </if>
+      <if test="declTime != null" >
+        decl_time,
+      </if>
+      <if test="opType != null" >
+        op_type,
+      </if>
+      <if test="iEFlag != null" >
+        i_e_flag,
+      </if>
+      <if test="customsCode != null" >
+        customs_code,
+      </if>
+      <if test="ciqOrgCode != null" >
+        ciq_org_code,
+      </if>
+      <if test="declStatus != null" >
+        decl_status,
+      </if>
+      <if test="declMode != null" >
+        decl_mode,
+      </if>
+      <if test="messageId != null" >
+        message_id,
+      </if>
+      <if test="cusFlag != null" >
+        cus_flag,
+      </if>
+      <if test="ciqFlag != null" >
+        ciq_flag,
+      </if>
+      <if test="centralId != null" >
+        central_id,
+      </if>
+      <if test="paymentDetailIds != null" >
+        payment_detail_ids,
+      </if>
+      <if test="createAt != null" >
+        create_at,
+      </if>
+      <if test="createUserId != null" >
+        create_user_id,
+      </if>
+      <if test="updateAt != null" >
+        update_at,
+      </if>
+      <if test="updateUserId != null" >
+        update_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="declEntId != null" >
+        #{declEntId,jdbcType=INTEGER},
+      </if>
+      <if test="payEntId != null" >
+        #{payEntId,jdbcType=INTEGER},
+      </if>
+      <if test="declTime != null" >
+        #{declTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opType != null" >
+        #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="iEFlag != null" >
+        #{iEFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customsCode != null" >
+        #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrgCode != null" >
+        #{ciqOrgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="declStatus != null" >
+        #{declStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="declMode != null" >
+        #{declMode,jdbcType=VARCHAR},
+      </if>
+      <if test="messageId != null" >
+        #{messageId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusFlag != null" >
+        #{cusFlag,jdbcType=BIT},
+      </if>
+      <if test="ciqFlag != null" >
+        #{ciqFlag,jdbcType=BIT},
+      </if>
+      <if test="centralId != null" >
+        #{centralId,jdbcType=INTEGER},
+      </if>
+      <if test="paymentDetailIds != null" >
+        #{paymentDetailIds,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=INTEGER},
+      </if>
+      <if test="updateAt != null" >
+        #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserId != null" >
+        #{updateUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.exports.payment.entity.ExPaymentHead" >
+    update ex_payment_head
+    <set >
+      <if test="declEntId != null" >
+        decl_ent_id = #{declEntId,jdbcType=INTEGER},
+      </if>
+      <if test="payEntId != null" >
+        pay_ent_id = #{payEntId,jdbcType=INTEGER},
+      </if>
+      <if test="declTime != null" >
+        decl_time = #{declTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opType != null" >
+        op_type = #{opType,jdbcType=VARCHAR},
+      </if>
+      <if test="iEFlag != null" >
+        i_e_flag = #{iEFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customsCode != null" >
+        customs_code = #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrgCode != null" >
+        ciq_org_code = #{ciqOrgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="declStatus != null" >
+        decl_status = #{declStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="declMode != null" >
+        decl_mode = #{declMode,jdbcType=VARCHAR},
+      </if>
+      <if test="messageId != null" >
+        message_id = #{messageId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusFlag != null" >
+        cus_flag = #{cusFlag,jdbcType=BIT},
+      </if>
+      <if test="ciqFlag != null" >
+        ciq_flag = #{ciqFlag,jdbcType=BIT},
+      </if>
+      <if test="centralId != null" >
+        central_id = #{centralId,jdbcType=INTEGER},
+      </if>
+      <if test="paymentDetailIds != null" >
+        payment_detail_ids = #{paymentDetailIds,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        create_at = #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=INTEGER},
+      </if>
+      <if test="updateAt != null" >
+        update_at = #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserId != null" >
+        update_user_id = #{updateUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.exports.payment.entity.ExPaymentHead" >
+    update ex_payment_head
+    set decl_ent_id = #{declEntId,jdbcType=INTEGER},
+      pay_ent_id = #{payEntId,jdbcType=INTEGER},
+      decl_time = #{declTime,jdbcType=TIMESTAMP},
+      op_type = #{opType,jdbcType=VARCHAR},
+      i_e_flag = #{iEFlag,jdbcType=VARCHAR},
+      customs_code = #{customsCode,jdbcType=VARCHAR},
+      ciq_org_code = #{ciqOrgCode,jdbcType=VARCHAR},
+      decl_status = #{declStatus,jdbcType=VARCHAR},
+      decl_mode = #{declMode,jdbcType=VARCHAR},
+      message_id = #{messageId,jdbcType=VARCHAR},
+      cus_flag = #{cusFlag,jdbcType=BIT},
+      ciq_flag = #{ciqFlag,jdbcType=BIT},
+      central_id = #{centralId,jdbcType=INTEGER},
+      payment_detail_ids = #{paymentDetailIds,jdbcType=VARCHAR},
+      create_at = #{createAt,jdbcType=TIMESTAMP},
+      create_user_id = #{createUserId,jdbcType=INTEGER},
+      update_at = #{updateAt,jdbcType=TIMESTAMP},
+      update_user_id = #{updateUserId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

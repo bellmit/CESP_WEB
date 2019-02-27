@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.payment.dao.PaymentDetailMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.payment.entity.PaymentDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="payment_head_id" jdbcType="INTEGER" property="paymentHeadId" />
+    <result column="ent_pay_no" jdbcType="VARCHAR" property="entPayNo" />
+    <result column="decl_ent_id" jdbcType="INTEGER" property="declEntId" />
+    <result column="pay_ent_id" jdbcType="INTEGER" property="payEntId" />
+    <result column="ie_flag" jdbcType="VARCHAR" property="ieFlag" />
+    <result column="customs_code" jdbcType="VARCHAR" property="customsCode" />
+    <result column="ciq_org_code" jdbcType="VARCHAR" property="ciqOrgCode" />
+    <result column="pay_status" jdbcType="VARCHAR" property="payStatus" />
+    <result column="pay_amount" jdbcType="DECIMAL" property="payAmount" />
+    <result column="pay_curr_code" jdbcType="VARCHAR" property="payCurrCode" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="payer_name" jdbcType="VARCHAR" property="payerName" />
+    <result column="payer_document_type" jdbcType="VARCHAR" property="payerDocumentType" />
+    <result column="payer_document_number" jdbcType="VARCHAR" property="payerDocumentNumber" />
+    <result column="ent_order_no" jdbcType="VARCHAR" property="entOrderNo" />
+    <result column="eb_ent_id" jdbcType="INTEGER" property="ebEntId" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="cus_message_status_pay" jdbcType="VARCHAR" property="cusMessageStatusPay" />
+    <result column="cus_pay_return_info" jdbcType="VARCHAR" property="cusPayReturnInfo" />
+    <result column="ciq_message_status_pay" jdbcType="VARCHAR" property="ciqMessageStatusPay" />
+    <result column="ciq_pay_return_info" jdbcType="VARCHAR" property="ciqPayReturnInfo" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="update_user_id" jdbcType="INTEGER" property="updateUserId" />
+  </resultMap>
+</mapper>

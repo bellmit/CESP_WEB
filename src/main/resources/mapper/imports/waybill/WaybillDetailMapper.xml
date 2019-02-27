@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.waybill.dao.WaybillDetailMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.waybill.entity.WaybillDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="waybill_head_id" jdbcType="INTEGER" property="waybillHeadId" />
+    <result column="ent_waybill_no" jdbcType="VARCHAR" property="entWaybillNo" />
+    <result column="decl_ent_id" jdbcType="INTEGER" property="declEntId" />
+    <result column="ehs_ent_id" jdbcType="INTEGER" property="ehsEntId" />
+    <result column="ie_flag" jdbcType="VARCHAR" property="ieFlag" />
+    <result column="customs_code" jdbcType="VARCHAR" property="customsCode" />
+    <result column="ciq_org_code" jdbcType="VARCHAR" property="ciqOrgCode" />
+    <result column="ent_order_no" jdbcType="VARCHAR" property="entOrderNo" />
+    <result column="bill_no" jdbcType="VARCHAR" property="billNo" />
+    <result column="out_date" jdbcType="TIMESTAMP" property="outDate" />
+    <result column="discharge_place" jdbcType="VARCHAR" property="dischargePlace" />
+    <result column="ehs_batch_no" jdbcType="VARCHAR" property="ehsBatchNo" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="route_status" jdbcType="VARCHAR" property="routeStatus" />
+    <result column="waybill_status" jdbcType="VARCHAR" property="waybillStatus" />
+    <result column="fee_rate" jdbcType="DECIMAL" property="feeRate" />
+    <result column="fee_curr_code" jdbcType="VARCHAR" property="feeCurrCode" />
+    <result column="fee_mark" jdbcType="VARCHAR" property="feeMark" />
+    <result column="insur_rate" jdbcType="DECIMAL" property="insurRate" />
+    <result column="other_rate" jdbcType="DECIMAL" property="otherRate" />
+    <result column="total_amount" jdbcType="DECIMAL" property="totalAmount" />
+    <result column="pack_no" jdbcType="DECIMAL" property="packNo" />
+    <result column="net_wt" jdbcType="DECIMAL" property="netWt" />
+    <result column="gross_wt" jdbcType="DECIMAL" property="grossWt" />
+    <result column="goods_detail" jdbcType="VARCHAR" property="goodsDetail" />
+    <result column="recipient_name" jdbcType="VARCHAR" property="recipientName" />
+    <result column="recipient_addr" jdbcType="VARCHAR" property="recipientAddr" />
+    <result column="recipient_tel" jdbcType="VARCHAR" property="recipientTel" />
+    <result column="recipient_country" jdbcType="VARCHAR" property="recipientCountry" />
+    <result column="recipient_provinces_code" jdbcType="VARCHAR" property="recipientProvincesCode" />
+    <result column="shipper_name" jdbcType="VARCHAR" property="shipperName" />
+    <result column="shipper_datailed_address" jdbcType="VARCHAR" property="shipperDatailedAddress" />
+    <result column="shipper_phone" jdbcType="VARCHAR" property="shipperPhone" />
+    <result column="shipper_country_code" jdbcType="VARCHAR" property="shipperCountryCode" />
+    <result column="shipper_provinces_code" jdbcType="VARCHAR" property="shipperProvincesCode" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="cus_message_status_waybill" jdbcType="VARCHAR" property="cusMessageStatusWaybill" />
+    <result column="cus_waybill_return_info" jdbcType="VARCHAR" property="cusWaybillReturnInfo" />
+    <result column="ciq_message_status_waybill" jdbcType="VARCHAR" property="ciqMessageStatusWaybill" />
+    <result column="ciq_waybill_return_info" jdbcType="VARCHAR" property="ciqWaybillReturnInfo" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="update_user_id" jdbcType="INTEGER" property="updateUserId" />
+  </resultMap>
+</mapper>

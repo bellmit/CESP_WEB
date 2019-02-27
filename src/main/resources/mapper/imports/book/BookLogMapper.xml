@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.book.dao.BookLogMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.book.entity.BookLog">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="book_id" jdbcType="INTEGER" property="bookId" />
+    <result column="inventory_type" jdbcType="VARCHAR" property="inventoryType" />
+    <result column="io_flag" jdbcType="VARCHAR" property="ioFlag" />
+    <result column="qty" jdbcType="DECIMAL" property="qty" />
+    <result column="io_date" jdbcType="TIMESTAMP" property="ioDate" />
+    <result column="corr_doc_code" jdbcType="VARCHAR" property="corrDocCode" />
+    <result column="corrt_doc_type" jdbcType="VARCHAR" property="corrtDocType" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+  </resultMap>
+</mapper>

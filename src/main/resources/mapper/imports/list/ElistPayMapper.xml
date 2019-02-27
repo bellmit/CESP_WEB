@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.list.dao.ElistPayMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.list.entity.ElistPay">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="elist_detail_info_id" jdbcType="INTEGER" property="elistDetailInfoId" />
+    <result column="ent_pay_no" jdbcType="VARCHAR" property="entPayNo" />
+    <result column="pay_ent_id" jdbcType="INTEGER" property="payEntId" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+  </resultMap>
+</mapper>

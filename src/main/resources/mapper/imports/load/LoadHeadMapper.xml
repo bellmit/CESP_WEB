@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.load.dao.LoadHeadMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.load.entity.LoadHead">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="decl_ent_id" jdbcType="INTEGER" property="declEntId" />
+    <result column="ehs_id" jdbcType="INTEGER" property="ehsId" />
+    <result column="customs_code" jdbcType="VARCHAR" property="customsCode" />
+    <result column="ciq_org_code" jdbcType="VARCHAR" property="ciqOrgCode" />
+    <result column="top_log_no" jdbcType="VARCHAR" property="topLogNo" />
+    <result column="ie_flag" jdbcType="VARCHAR" property="ieFlag" />
+    <result column="ie_port" jdbcType="VARCHAR" property="iePort" />
+    <result column="destination_port" jdbcType="VARCHAR" property="destinationPort" />
+    <result column="pack_no" jdbcType="DECIMAL" property="packNo" />
+    <result column="ie_date" jdbcType="TIMESTAMP" property="ieDate" />
+    <result column="traf_mode" jdbcType="VARCHAR" property="trafMode" />
+    <result column="tran_no" jdbcType="VARCHAR" property="tranNo" />
+    <result column="app_uid" jdbcType="VARCHAR" property="appUid" />
+    <result column="car_ec_no" jdbcType="VARCHAR" property="carEcNo" />
+    <result column="ship_customs_no" jdbcType="VARCHAR" property="shipCustomsNo" />
+    <result column="voyage_no" jdbcType="VARCHAR" property="voyageNo" />
+    <result column="bill_no" jdbcType="VARCHAR" property="billNo" />
+    <result column="load_date" jdbcType="TIMESTAMP" property="loadDate" />
+    <result column="total_weight" jdbcType="DECIMAL" property="totalWeight" />
+    <result column="ent_loading_no" jdbcType="VARCHAR" property="entLoadingNo" />
+    <result column="eport_loading_no" jdbcType="VARCHAR" property="eportLoadingNo" />
+    <result column="ciq_load_no" jdbcType="VARCHAR" property="ciqLoadNo" />
+    <result column="cus_load_no" jdbcType="VARCHAR" property="cusLoadNo" />
+    <result column="decl_time" jdbcType="TIMESTAMP" property="declTime" />
+    <result column="input_date" jdbcType="TIMESTAMP" property="inputDate" />
+    <result column="op_type" jdbcType="VARCHAR" property="opType" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="decl_status" jdbcType="VARCHAR" property="declStatus" />
+    <result column="decl_mode" jdbcType="VARCHAR" property="declMode" />
+    <result column="message_id" jdbcType="VARCHAR" property="messageId" />
+    <result column="function_code" jdbcType="VARCHAR" property="functionCode" />
+    <result column="cus_message_status_load" jdbcType="VARCHAR" property="cusMessageStatusLoad" />
+    <result column="cus_load_return_info" jdbcType="VARCHAR" property="cusLoadReturnInfo" />
+    <result column="ciq_message_status_load" jdbcType="VARCHAR" property="ciqMessageStatusLoad" />
+    <result column="ciq_load_return_info" jdbcType="VARCHAR" property="ciqLoadReturnInfo" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="update_user_id" jdbcType="INTEGER" property="updateUserId" />
+  </resultMap>
+</mapper>

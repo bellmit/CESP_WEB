@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyitg.cesp.core.exports.list.dao.ExEListPayMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.exports.list.entity.ExEListPay" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="e_list_detail_info_id" property="eListDetailInfoId" jdbcType="INTEGER" />
+    <result column="ent_pay_no" property="entPayNo" jdbcType="VARCHAR" />
+    <result column="pay_ent_id" property="payEntId" jdbcType="INTEGER" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, e_list_detail_info_id, ent_pay_no, pay_ent_id, notes
+  </sql>
+  <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ex_e_list_pay
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ex_e_list_pay
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListPay" >
+    insert into ex_e_list_pay (id, e_list_detail_info_id, ent_pay_no, 
+      pay_ent_id, notes)
+    values (#{id,jdbcType=INTEGER}, #{eListDetailInfoId,jdbcType=INTEGER}, #{entPayNo,jdbcType=VARCHAR}, 
+      #{payEntId,jdbcType=INTEGER}, #{notes,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListPay" >
+    insert into ex_e_list_pay
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="eListDetailInfoId != null" >
+        e_list_detail_info_id,
+      </if>
+      <if test="entPayNo != null" >
+        ent_pay_no,
+      </if>
+      <if test="payEntId != null" >
+        pay_ent_id,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="eListDetailInfoId != null" >
+        #{eListDetailInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="entPayNo != null" >
+        #{entPayNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payEntId != null" >
+        #{payEntId,jdbcType=INTEGER},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListPay" >
+    update ex_e_list_pay
+    <set >
+      <if test="eListDetailInfoId != null" >
+        e_list_detail_info_id = #{eListDetailInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="entPayNo != null" >
+        ent_pay_no = #{entPayNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payEntId != null" >
+        pay_ent_id = #{payEntId,jdbcType=INTEGER},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListPay" >
+    update ex_e_list_pay
+    set e_list_detail_info_id = #{eListDetailInfoId,jdbcType=INTEGER},
+      ent_pay_no = #{entPayNo,jdbcType=VARCHAR},
+      pay_ent_id = #{payEntId,jdbcType=INTEGER},
+      notes = #{notes,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

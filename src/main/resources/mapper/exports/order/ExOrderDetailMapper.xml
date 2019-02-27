@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyitg.cesp.core.exports.order.dao.ExOrderDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.exports.order.entity.ExOrderDetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_head_id" property="orderHeadId" jdbcType="INTEGER" />
+    <result column="ent_order_no" property="entOrderNo" jdbcType="VARCHAR" />
+    <result column="decl_ent_id" property="declEntId" jdbcType="INTEGER" />
+    <result column="e_b_ent_id" property="eBEntId" jdbcType="INTEGER" />
+    <result column="e_b_p_ent_id" property="eBPEntId" jdbcType="INTEGER" />
+    <result column="i_e_flag" property="iEFlag" jdbcType="VARCHAR" />
+    <result column="customs_code" property="customsCode" jdbcType="VARCHAR" />
+    <result column="ciq_org_code" property="ciqOrgCode" jdbcType="VARCHAR" />
+    <result column="order_status" property="orderStatus" jdbcType="VARCHAR" />
+    <result column="pay_status" property="payStatus" jdbcType="VARCHAR" />
+    <result column="order_good_total" property="orderGoodTotal" jdbcType="DECIMAL" />
+    <result column="order_good_total_curr" property="orderGoodTotalCurr" jdbcType="VARCHAR" />
+    <result column="freight" property="freight" jdbcType="DECIMAL" />
+    <result column="checking_no" property="checkingNo" jdbcType="VARCHAR" />
+    <result column="delivery_ent" property="deliveryEnt" jdbcType="VARCHAR" />
+    <result column="recipient_name" property="recipientName" jdbcType="VARCHAR" />
+    <result column="recipient_addr" property="recipientAddr" jdbcType="VARCHAR" />
+    <result column="recipient_tel" property="recipientTel" jdbcType="VARCHAR" />
+    <result column="recipient_country" property="recipientCountry" jdbcType="VARCHAR" />
+    <result column="order_doc_account" property="orderDocAccount" jdbcType="VARCHAR" />
+    <result column="order_date" property="orderDate" jdbcType="TIMESTAMP" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+    <result column="cus_message_status_order" property="cusMessageStatusOrder" jdbcType="VARCHAR" />
+    <result column="cus_order_return_info" property="cusOrderReturnInfo" jdbcType="VARCHAR" />
+    <result column="ciq_message_status_order" property="ciqMessageStatusOrder" jdbcType="VARCHAR" />
+    <result column="ciq_order_return_info" property="ciqOrderReturnInfo" jdbcType="VARCHAR" />
+    <result column="create_at" property="createAt" jdbcType="TIMESTAMP" />
+    <result column="create_user_id" property="createUserId" jdbcType="INTEGER" />
+    <result column="update_at" property="updateAt" jdbcType="TIMESTAMP" />
+    <result column="update_user_id" property="updateUserId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_head_id, ent_order_no, decl_ent_id, e_b_ent_id, e_b_p_ent_id, i_e_flag, 
+    customs_code, ciq_org_code, order_status, pay_status, order_good_total, order_good_total_curr, 
+    freight, checking_no, delivery_ent, recipient_name, recipient_addr, recipient_tel, 
+    recipient_country, order_doc_account, order_date, notes, cus_message_status_order, 
+    cus_order_return_info, ciq_message_status_order, ciq_order_return_info, create_at, 
+    create_user_id, update_at, update_user_id
+  </sql>
+  <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ex_order_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ex_order_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.exports.order.entity.ExOrderDetail" >
+    insert into ex_order_detail (id, order_head_id, ent_order_no, 
+      decl_ent_id, e_b_ent_id, e_b_p_ent_id, 
+      i_e_flag, customs_code, ciq_org_code, 
+      order_status, pay_status, order_good_total, 
+      order_good_total_curr, freight, checking_no, 
+      delivery_ent, recipient_name, recipient_addr, 
+      recipient_tel, recipient_country, order_doc_account, 
+      order_date, notes, cus_message_status_order, 
+      cus_order_return_info, ciq_message_status_order, 
+      ciq_order_return_info, create_at, create_user_id, 
+      update_at, update_user_id)
+    values (#{id,jdbcType=INTEGER}, #{orderHeadId,jdbcType=INTEGER}, #{entOrderNo,jdbcType=VARCHAR}, 
+      #{declEntId,jdbcType=INTEGER}, #{eBEntId,jdbcType=INTEGER}, #{eBPEntId,jdbcType=INTEGER}, 
+      #{iEFlag,jdbcType=VARCHAR}, #{customsCode,jdbcType=VARCHAR}, #{ciqOrgCode,jdbcType=VARCHAR}, 
+      #{orderStatus,jdbcType=VARCHAR}, #{payStatus,jdbcType=VARCHAR}, #{orderGoodTotal,jdbcType=DECIMAL}, 
+      #{orderGoodTotalCurr,jdbcType=VARCHAR}, #{freight,jdbcType=DECIMAL}, #{checkingNo,jdbcType=VARCHAR}, 
+      #{deliveryEnt,jdbcType=VARCHAR}, #{recipientName,jdbcType=VARCHAR}, #{recipientAddr,jdbcType=VARCHAR}, 
+      #{recipientTel,jdbcType=VARCHAR}, #{recipientCountry,jdbcType=VARCHAR}, #{orderDocAccount,jdbcType=VARCHAR}, 
+      #{orderDate,jdbcType=TIMESTAMP}, #{notes,jdbcType=VARCHAR}, #{cusMessageStatusOrder,jdbcType=VARCHAR}, 
+      #{cusOrderReturnInfo,jdbcType=VARCHAR}, #{ciqMessageStatusOrder,jdbcType=VARCHAR}, 
+      #{ciqOrderReturnInfo,jdbcType=VARCHAR}, #{createAt,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=INTEGER}, 
+      #{updateAt,jdbcType=TIMESTAMP}, #{updateUserId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.exports.order.entity.ExOrderDetail" >
+    insert into ex_order_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orderHeadId != null" >
+        order_head_id,
+      </if>
+      <if test="entOrderNo != null" >
+        ent_order_no,
+      </if>
+      <if test="declEntId != null" >
+        decl_ent_id,
+      </if>
+      <if test="eBEntId != null" >
+        e_b_ent_id,
+      </if>
+      <if test="eBPEntId != null" >
+        e_b_p_ent_id,
+      </if>
+      <if test="iEFlag != null" >
+        i_e_flag,
+      </if>
+      <if test="customsCode != null" >
+        customs_code,
+      </if>
+      <if test="ciqOrgCode != null" >
+        ciq_org_code,
+      </if>
+      <if test="orderStatus != null" >
+        order_status,
+      </if>
+      <if test="payStatus != null" >
+        pay_status,
+      </if>
+      <if test="orderGoodTotal != null" >
+        order_good_total,
+      </if>
+      <if test="orderGoodTotalCurr != null" >
+        order_good_total_curr,
+      </if>
+      <if test="freight != null" >
+        freight,
+      </if>
+      <if test="checkingNo != null" >
+        checking_no,
+      </if>
+      <if test="deliveryEnt != null" >
+        delivery_ent,
+      </if>
+      <if test="recipientName != null" >
+        recipient_name,
+      </if>
+      <if test="recipientAddr != null" >
+        recipient_addr,
+      </if>
+      <if test="recipientTel != null" >
+        recipient_tel,
+      </if>
+      <if test="recipientCountry != null" >
+        recipient_country,
+      </if>
+      <if test="orderDocAccount != null" >
+        order_doc_account,
+      </if>
+      <if test="orderDate != null" >
+        order_date,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+      <if test="cusMessageStatusOrder != null" >
+        cus_message_status_order,
+      </if>
+      <if test="cusOrderReturnInfo != null" >
+        cus_order_return_info,
+      </if>
+      <if test="ciqMessageStatusOrder != null" >
+        ciq_message_status_order,
+      </if>
+      <if test="ciqOrderReturnInfo != null" >
+        ciq_order_return_info,
+      </if>
+      <if test="createAt != null" >
+        create_at,
+      </if>
+      <if test="createUserId != null" >
+        create_user_id,
+      </if>
+      <if test="updateAt != null" >
+        update_at,
+      </if>
+      <if test="updateUserId != null" >
+        update_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderHeadId != null" >
+        #{orderHeadId,jdbcType=INTEGER},
+      </if>
+      <if test="entOrderNo != null" >
+        #{entOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="declEntId != null" >
+        #{declEntId,jdbcType=INTEGER},
+      </if>
+      <if test="eBEntId != null" >
+        #{eBEntId,jdbcType=INTEGER},
+      </if>
+      <if test="eBPEntId != null" >
+        #{eBPEntId,jdbcType=INTEGER},
+      </if>
+      <if test="iEFlag != null" >
+        #{iEFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customsCode != null" >
+        #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrgCode != null" >
+        #{ciqOrgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null" >
+        #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null" >
+        #{payStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderGoodTotal != null" >
+        #{orderGoodTotal,jdbcType=DECIMAL},
+      </if>
+      <if test="orderGoodTotalCurr != null" >
+        #{orderGoodTotalCurr,jdbcType=VARCHAR},
+      </if>
+      <if test="freight != null" >
+        #{freight,jdbcType=DECIMAL},
+      </if>
+      <if test="checkingNo != null" >
+        #{checkingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryEnt != null" >
+        #{deliveryEnt,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientName != null" >
+        #{recipientName,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientAddr != null" >
+        #{recipientAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientTel != null" >
+        #{recipientTel,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientCountry != null" >
+        #{recipientCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="orderDocAccount != null" >
+        #{orderDocAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="orderDate != null" >
+        #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="cusMessageStatusOrder != null" >
+        #{cusMessageStatusOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="cusOrderReturnInfo != null" >
+        #{cusOrderReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqMessageStatusOrder != null" >
+        #{ciqMessageStatusOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrderReturnInfo != null" >
+        #{ciqOrderReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=INTEGER},
+      </if>
+      <if test="updateAt != null" >
+        #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserId != null" >
+        #{updateUserId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.exports.order.entity.ExOrderDetail" >
+    update ex_order_detail
+    <set >
+      <if test="orderHeadId != null" >
+        order_head_id = #{orderHeadId,jdbcType=INTEGER},
+      </if>
+      <if test="entOrderNo != null" >
+        ent_order_no = #{entOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="declEntId != null" >
+        decl_ent_id = #{declEntId,jdbcType=INTEGER},
+      </if>
+      <if test="eBEntId != null" >
+        e_b_ent_id = #{eBEntId,jdbcType=INTEGER},
+      </if>
+      <if test="eBPEntId != null" >
+        e_b_p_ent_id = #{eBPEntId,jdbcType=INTEGER},
+      </if>
+      <if test="iEFlag != null" >
+        i_e_flag = #{iEFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customsCode != null" >
+        customs_code = #{customsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrgCode != null" >
+        ciq_org_code = #{ciqOrgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null" >
+        order_status = #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null" >
+        pay_status = #{payStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderGoodTotal != null" >
+        order_good_total = #{orderGoodTotal,jdbcType=DECIMAL},
+      </if>
+      <if test="orderGoodTotalCurr != null" >
+        order_good_total_curr = #{orderGoodTotalCurr,jdbcType=VARCHAR},
+      </if>
+      <if test="freight != null" >
+        freight = #{freight,jdbcType=DECIMAL},
+      </if>
+      <if test="checkingNo != null" >
+        checking_no = #{checkingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryEnt != null" >
+        delivery_ent = #{deliveryEnt,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientName != null" >
+        recipient_name = #{recipientName,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientAddr != null" >
+        recipient_addr = #{recipientAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientTel != null" >
+        recipient_tel = #{recipientTel,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientCountry != null" >
+        recipient_country = #{recipientCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="orderDocAccount != null" >
+        order_doc_account = #{orderDocAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="orderDate != null" >
+        order_date = #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="cusMessageStatusOrder != null" >
+        cus_message_status_order = #{cusMessageStatusOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="cusOrderReturnInfo != null" >
+        cus_order_return_info = #{cusOrderReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqMessageStatusOrder != null" >
+        ciq_message_status_order = #{ciqMessageStatusOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqOrderReturnInfo != null" >
+        ciq_order_return_info = #{ciqOrderReturnInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createAt != null" >
+        create_at = #{createAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=INTEGER},
+      </if>
+      <if test="updateAt != null" >
+        update_at = #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserId != null" >
+        update_user_id = #{updateUserId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.exports.order.entity.ExOrderDetail" >
+    update ex_order_detail
+    set order_head_id = #{orderHeadId,jdbcType=INTEGER},
+      ent_order_no = #{entOrderNo,jdbcType=VARCHAR},
+      decl_ent_id = #{declEntId,jdbcType=INTEGER},
+      e_b_ent_id = #{eBEntId,jdbcType=INTEGER},
+      e_b_p_ent_id = #{eBPEntId,jdbcType=INTEGER},
+      i_e_flag = #{iEFlag,jdbcType=VARCHAR},
+      customs_code = #{customsCode,jdbcType=VARCHAR},
+      ciq_org_code = #{ciqOrgCode,jdbcType=VARCHAR},
+      order_status = #{orderStatus,jdbcType=VARCHAR},
+      pay_status = #{payStatus,jdbcType=VARCHAR},
+      order_good_total = #{orderGoodTotal,jdbcType=DECIMAL},
+      order_good_total_curr = #{orderGoodTotalCurr,jdbcType=VARCHAR},
+      freight = #{freight,jdbcType=DECIMAL},
+      checking_no = #{checkingNo,jdbcType=VARCHAR},
+      delivery_ent = #{deliveryEnt,jdbcType=VARCHAR},
+      recipient_name = #{recipientName,jdbcType=VARCHAR},
+      recipient_addr = #{recipientAddr,jdbcType=VARCHAR},
+      recipient_tel = #{recipientTel,jdbcType=VARCHAR},
+      recipient_country = #{recipientCountry,jdbcType=VARCHAR},
+      order_doc_account = #{orderDocAccount,jdbcType=VARCHAR},
+      order_date = #{orderDate,jdbcType=TIMESTAMP},
+      notes = #{notes,jdbcType=VARCHAR},
+      cus_message_status_order = #{cusMessageStatusOrder,jdbcType=VARCHAR},
+      cus_order_return_info = #{cusOrderReturnInfo,jdbcType=VARCHAR},
+      ciq_message_status_order = #{ciqMessageStatusOrder,jdbcType=VARCHAR},
+      ciq_order_return_info = #{ciqOrderReturnInfo,jdbcType=VARCHAR},
+      create_at = #{createAt,jdbcType=TIMESTAMP},
+      create_user_id = #{createUserId,jdbcType=INTEGER},
+      update_at = #{updateAt,jdbcType=TIMESTAMP},
+      update_user_id = #{updateUserId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

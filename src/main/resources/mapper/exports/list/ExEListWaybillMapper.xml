@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyitg.cesp.core.exports.list.dao.ExEListWaybillMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.exports.list.entity.ExEListWaybill" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="e_list_detail_info_id" property="eListDetailInfoId" jdbcType="INTEGER" />
+    <result column="ent_waybill_no" property="entWaybillNo" jdbcType="VARCHAR" />
+    <result column="e_h_s_ent_id" property="eHSEntId" jdbcType="INTEGER" />
+    <result column="gross_weight" property="grossWeight" jdbcType="DECIMAL" />
+    <result column="net_wt" property="netWt" jdbcType="DECIMAL" />
+    <result column="fee_rate" property="feeRate" jdbcType="DECIMAL" />
+    <result column="fee_mark" property="feeMark" jdbcType="VARCHAR" />
+    <result column="insur_rate" property="insurRate" jdbcType="DECIMAL" />
+    <result column="insur_curr_code" property="insurCurrCode" jdbcType="VARCHAR" />
+    <result column="insur_mark" property="insurMark" jdbcType="VARCHAR" />
+    <result column="other_rate" property="otherRate" jdbcType="DECIMAL" />
+    <result column="recipient_name_c" property="recipientNameC" jdbcType="VARCHAR" />
+    <result column="recipient_country" property="recipientCountry" jdbcType="VARCHAR" />
+    <result column="recipient_provinces_code" property="recipientProvincesCode" jdbcType="VARCHAR" />
+    <result column="recipient_addr_c" property="recipientAddrC" jdbcType="VARCHAR" />
+    <result column="recipient_tel" property="recipientTel" jdbcType="VARCHAR" />
+    <result column="shipper_code" property="shipperCode" jdbcType="VARCHAR" />
+    <result column="shipper_c" property="shipperC" jdbcType="VARCHAR" />
+    <result column="shipper_addr_c" property="shipperAddrC" jdbcType="VARCHAR" />
+    <result column="shipper_phone" property="shipperPhone" jdbcType="VARCHAR" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, e_list_detail_info_id, ent_waybill_no, e_h_s_ent_id, gross_weight, net_wt, fee_rate, 
+    fee_mark, insur_rate, insur_curr_code, insur_mark, other_rate, recipient_name_c, 
+    recipient_country, recipient_provinces_code, recipient_addr_c, recipient_tel, shipper_code, 
+    shipper_c, shipper_addr_c, shipper_phone, notes
+  </sql>
+  <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ex_e_list_waybill
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ex_e_list_waybill
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListWaybill" >
+    insert into ex_e_list_waybill (id, e_list_detail_info_id, ent_waybill_no, 
+      e_h_s_ent_id, gross_weight, net_wt, 
+      fee_rate, fee_mark, insur_rate, 
+      insur_curr_code, insur_mark, other_rate, 
+      recipient_name_c, recipient_country, recipient_provinces_code, 
+      recipient_addr_c, recipient_tel, shipper_code, 
+      shipper_c, shipper_addr_c, shipper_phone, 
+      notes)
+    values (#{id,jdbcType=INTEGER}, #{eListDetailInfoId,jdbcType=INTEGER}, #{entWaybillNo,jdbcType=VARCHAR}, 
+      #{eHSEntId,jdbcType=INTEGER}, #{grossWeight,jdbcType=DECIMAL}, #{netWt,jdbcType=DECIMAL}, 
+      #{feeRate,jdbcType=DECIMAL}, #{feeMark,jdbcType=VARCHAR}, #{insurRate,jdbcType=DECIMAL}, 
+      #{insurCurrCode,jdbcType=VARCHAR}, #{insurMark,jdbcType=VARCHAR}, #{otherRate,jdbcType=DECIMAL}, 
+      #{recipientNameC,jdbcType=VARCHAR}, #{recipientCountry,jdbcType=VARCHAR}, #{recipientProvincesCode,jdbcType=VARCHAR}, 
+      #{recipientAddrC,jdbcType=VARCHAR}, #{recipientTel,jdbcType=VARCHAR}, #{shipperCode,jdbcType=VARCHAR}, 
+      #{shipperC,jdbcType=VARCHAR}, #{shipperAddrC,jdbcType=VARCHAR}, #{shipperPhone,jdbcType=VARCHAR}, 
+      #{notes,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListWaybill" >
+    insert into ex_e_list_waybill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="eListDetailInfoId != null" >
+        e_list_detail_info_id,
+      </if>
+      <if test="entWaybillNo != null" >
+        ent_waybill_no,
+      </if>
+      <if test="eHSEntId != null" >
+        e_h_s_ent_id,
+      </if>
+      <if test="grossWeight != null" >
+        gross_weight,
+      </if>
+      <if test="netWt != null" >
+        net_wt,
+      </if>
+      <if test="feeRate != null" >
+        fee_rate,
+      </if>
+      <if test="feeMark != null" >
+        fee_mark,
+      </if>
+      <if test="insurRate != null" >
+        insur_rate,
+      </if>
+      <if test="insurCurrCode != null" >
+        insur_curr_code,
+      </if>
+      <if test="insurMark != null" >
+        insur_mark,
+      </if>
+      <if test="otherRate != null" >
+        other_rate,
+      </if>
+      <if test="recipientNameC != null" >
+        recipient_name_c,
+      </if>
+      <if test="recipientCountry != null" >
+        recipient_country,
+      </if>
+      <if test="recipientProvincesCode != null" >
+        recipient_provinces_code,
+      </if>
+      <if test="recipientAddrC != null" >
+        recipient_addr_c,
+      </if>
+      <if test="recipientTel != null" >
+        recipient_tel,
+      </if>
+      <if test="shipperCode != null" >
+        shipper_code,
+      </if>
+      <if test="shipperC != null" >
+        shipper_c,
+      </if>
+      <if test="shipperAddrC != null" >
+        shipper_addr_c,
+      </if>
+      <if test="shipperPhone != null" >
+        shipper_phone,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="eListDetailInfoId != null" >
+        #{eListDetailInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="entWaybillNo != null" >
+        #{entWaybillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="eHSEntId != null" >
+        #{eHSEntId,jdbcType=INTEGER},
+      </if>
+      <if test="grossWeight != null" >
+        #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="netWt != null" >
+        #{netWt,jdbcType=DECIMAL},
+      </if>
+      <if test="feeRate != null" >
+        #{feeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="feeMark != null" >
+        #{feeMark,jdbcType=VARCHAR},
+      </if>
+      <if test="insurRate != null" >
+        #{insurRate,jdbcType=DECIMAL},
+      </if>
+      <if test="insurCurrCode != null" >
+        #{insurCurrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insurMark != null" >
+        #{insurMark,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRate != null" >
+        #{otherRate,jdbcType=DECIMAL},
+      </if>
+      <if test="recipientNameC != null" >
+        #{recipientNameC,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientCountry != null" >
+        #{recipientCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientProvincesCode != null" >
+        #{recipientProvincesCode,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientAddrC != null" >
+        #{recipientAddrC,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientTel != null" >
+        #{recipientTel,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperCode != null" >
+        #{shipperCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperC != null" >
+        #{shipperC,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperAddrC != null" >
+        #{shipperAddrC,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperPhone != null" >
+        #{shipperPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListWaybill" >
+    update ex_e_list_waybill
+    <set >
+      <if test="eListDetailInfoId != null" >
+        e_list_detail_info_id = #{eListDetailInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="entWaybillNo != null" >
+        ent_waybill_no = #{entWaybillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="eHSEntId != null" >
+        e_h_s_ent_id = #{eHSEntId,jdbcType=INTEGER},
+      </if>
+      <if test="grossWeight != null" >
+        gross_weight = #{grossWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="netWt != null" >
+        net_wt = #{netWt,jdbcType=DECIMAL},
+      </if>
+      <if test="feeRate != null" >
+        fee_rate = #{feeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="feeMark != null" >
+        fee_mark = #{feeMark,jdbcType=VARCHAR},
+      </if>
+      <if test="insurRate != null" >
+        insur_rate = #{insurRate,jdbcType=DECIMAL},
+      </if>
+      <if test="insurCurrCode != null" >
+        insur_curr_code = #{insurCurrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insurMark != null" >
+        insur_mark = #{insurMark,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRate != null" >
+        other_rate = #{otherRate,jdbcType=DECIMAL},
+      </if>
+      <if test="recipientNameC != null" >
+        recipient_name_c = #{recipientNameC,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientCountry != null" >
+        recipient_country = #{recipientCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientProvincesCode != null" >
+        recipient_provinces_code = #{recipientProvincesCode,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientAddrC != null" >
+        recipient_addr_c = #{recipientAddrC,jdbcType=VARCHAR},
+      </if>
+      <if test="recipientTel != null" >
+        recipient_tel = #{recipientTel,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperCode != null" >
+        shipper_code = #{shipperCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperC != null" >
+        shipper_c = #{shipperC,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperAddrC != null" >
+        shipper_addr_c = #{shipperAddrC,jdbcType=VARCHAR},
+      </if>
+      <if test="shipperPhone != null" >
+        shipper_phone = #{shipperPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyitg.cesp.core.exports.list.entity.ExEListWaybill" >
+    update ex_e_list_waybill
+    set e_list_detail_info_id = #{eListDetailInfoId,jdbcType=INTEGER},
+      ent_waybill_no = #{entWaybillNo,jdbcType=VARCHAR},
+      e_h_s_ent_id = #{eHSEntId,jdbcType=INTEGER},
+      gross_weight = #{grossWeight,jdbcType=DECIMAL},
+      net_wt = #{netWt,jdbcType=DECIMAL},
+      fee_rate = #{feeRate,jdbcType=DECIMAL},
+      fee_mark = #{feeMark,jdbcType=VARCHAR},
+      insur_rate = #{insurRate,jdbcType=DECIMAL},
+      insur_curr_code = #{insurCurrCode,jdbcType=VARCHAR},
+      insur_mark = #{insurMark,jdbcType=VARCHAR},
+      other_rate = #{otherRate,jdbcType=DECIMAL},
+      recipient_name_c = #{recipientNameC,jdbcType=VARCHAR},
+      recipient_country = #{recipientCountry,jdbcType=VARCHAR},
+      recipient_provinces_code = #{recipientProvincesCode,jdbcType=VARCHAR},
+      recipient_addr_c = #{recipientAddrC,jdbcType=VARCHAR},
+      recipient_tel = #{recipientTel,jdbcType=VARCHAR},
+      shipper_code = #{shipperCode,jdbcType=VARCHAR},
+      shipper_c = #{shipperC,jdbcType=VARCHAR},
+      shipper_addr_c = #{shipperAddrC,jdbcType=VARCHAR},
+      shipper_phone = #{shipperPhone,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update> -->
+</mapper>

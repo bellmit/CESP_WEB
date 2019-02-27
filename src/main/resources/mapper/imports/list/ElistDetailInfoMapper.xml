@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.list.dao.ElistDetailInfoMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.list.entity.ElistDetailInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="elist_head_id" jdbcType="INTEGER" property="elistHeadId" />
+    <result column="ent_elist_no" jdbcType="VARCHAR" property="entElistNo" />
+    <result column="decl_ent_id" jdbcType="INTEGER" property="declEntId" />
+    <result column="eb_ent_id" jdbcType="INTEGER" property="ebEntId" />
+    <result column="ie_flag" jdbcType="VARCHAR" property="ieFlag" />
+    <result column="customs_code" jdbcType="VARCHAR" property="customsCode" />
+    <result column="ciq_org_code" jdbcType="VARCHAR" property="ciqOrgCode" />
+    <result column="trade_mode" jdbcType="VARCHAR" property="tradeMode" />
+    <result column="tax_no" jdbcType="VARCHAR" property="taxNo" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="customs_tax" jdbcType="DECIMAL" property="customsTax" />
+    <result column="value_added_tax" jdbcType="DECIMAL" property="valueAddedTax" />
+    <result column="consumption_tax" jdbcType="DECIMAL" property="consumptionTax" />
+    <result column="ent_order_no" jdbcType="VARCHAR" property="entOrderNo" />
+    <result column="ent_waybill_no" jdbcType="VARCHAR" property="entWaybillNo" />
+    <result column="eport_elist_no" jdbcType="VARCHAR" property="eportElistNo" />
+    <result column="pre_no" jdbcType="VARCHAR" property="preNo" />
+    <result column="cus_elist_no" jdbcType="VARCHAR" property="cusElistNo" />
+    <result column="ciq_elist_no" jdbcType="VARCHAR" property="ciqElistNo" />
+    <result column="assure_id" jdbcType="INTEGER" property="assureId" />
+    <result column="ie_port" jdbcType="VARCHAR" property="iePort" />
+    <result column="sv_p_code" jdbcType="VARCHAR" property="svPCode" />
+    <result column="ie_date" jdbcType="TIMESTAMP" property="ieDate" />
+    <result column="ems_no" jdbcType="VARCHAR" property="emsNo" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="license_no" jdbcType="VARCHAR" property="licenseNo" />
+    <result column="trans_mode" jdbcType="VARCHAR" property="transMode" />
+    <result column="use_to" jdbcType="VARCHAR" property="useTo" />
+    <result column="bill_no" jdbcType="VARCHAR" property="billNo" />
+    <result column="pack_ent_name" jdbcType="VARCHAR" property="packEntName" />
+    <result column="wrap_type" jdbcType="VARCHAR" property="wrapType" />
+    <result column="pack_quantity" jdbcType="INTEGER" property="packQuantity" />
+    <result column="trans_type" jdbcType="VARCHAR" property="transType" />
+    <result column="trans_code" jdbcType="VARCHAR" property="transCode" />
+    <result column="trans_no" jdbcType="VARCHAR" property="transNo" />
+    <result column="voyage_no" jdbcType="VARCHAR" property="voyageNo" />
+    <result column="destination_country" jdbcType="VARCHAR" property="destinationCountry" />
+    <result column="destination_port" jdbcType="VARCHAR" property="destinationPort" />
+    <result column="edest_date" jdbcType="TIMESTAMP" property="edestDate" />
+    <result column="route_country" jdbcType="VARCHAR" property="routeCountry" />
+    <result column="consignee_name" jdbcType="VARCHAR" property="consigneeName" />
+    <result column="consignee_id_num" jdbcType="VARCHAR" property="consigneeIdNum" />
+    <result column="consignee_card_type" jdbcType="VARCHAR" property="consigneeCardType" />
+    <result column="consignee_country" jdbcType="VARCHAR" property="consigneeCountry" />
+    <result column="consignee_tel" jdbcType="VARCHAR" property="consigneeTel" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="cus_message_status_list" jdbcType="VARCHAR" property="cusMessageStatusList" />
+    <result column="cus_list_return_info" jdbcType="VARCHAR" property="cusListReturnInfo" />
+    <result column="ciq_message_status_list" jdbcType="VARCHAR" property="ciqMessageStatusList" />
+    <result column="ciq_list_return_info" jdbcType="VARCHAR" property="ciqListReturnInfo" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="update_user_id" jdbcType="INTEGER" property="updateUserId" />
+  </resultMap>
+</mapper>

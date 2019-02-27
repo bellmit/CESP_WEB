@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunyitg.cesp.core.imports.inbound.dao.InboundContentMapper">
+  <resultMap id="BaseResultMap" type="com.yunyitg.cesp.core.imports.inbound.entity.InboundContent">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="inbound_head_id" jdbcType="INTEGER" property="inboundHeadId" />
+    <result column="seq" jdbcType="DECIMAL" property="seq" />
+    <result column="goods_batch_no" jdbcType="VARCHAR" property="goodsBatchNo" />
+    <result column="ent_goods_no" jdbcType="VARCHAR" property="entGoodsNo" />
+    <result column="ciq_goods_no" jdbcType="VARCHAR" property="ciqGoodsNo" />
+    <result column="cus_goods_no" jdbcType="VARCHAR" property="cusGoodsNo" />
+    <result column="hs_code" jdbcType="VARCHAR" property="hsCode" />
+    <result column="origin_country" jdbcType="VARCHAR" property="originCountry" />
+    <result column="purchase_place" jdbcType="VARCHAR" property="purchasePlace" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_style" jdbcType="VARCHAR" property="goodsStyle" />
+    <result column="std_unit" jdbcType="VARCHAR" property="stdUnit" />
+    <result column="sec_unit" jdbcType="VARCHAR" property="secUnit" />
+    <result column="manufactory" jdbcType="VARCHAR" property="manufactory" />
+    <result column="std_qty" jdbcType="DECIMAL" property="stdQty" />
+    <result column="sec_qty" jdbcType="DECIMAL" property="secQty" />
+    <result column="declare_price" jdbcType="DECIMAL" property="declarePrice" />
+    <result column="dec_total" jdbcType="DECIMAL" property="decTotal" />
+    <result column="curr_code" jdbcType="VARCHAR" property="currCode" />
+    <result column="trade_country" jdbcType="VARCHAR" property="tradeCountry" />
+    <result column="package_type" jdbcType="VARCHAR" property="packageType" />
+    <result column="outer_package" jdbcType="VARCHAR" property="outerPackage" />
+    <result column="gross_weight" jdbcType="DECIMAL" property="grossWeight" />
+    <result column="net_weight" jdbcType="DECIMAL" property="netWeight" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+  </resultMap>
+</mapper>

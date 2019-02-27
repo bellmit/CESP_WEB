@@ -1,0 +1,16 @@
+INSERT INTO `base_transport_info` VALUES (1, '0', '非保税区', '汽车');
+INSERT INTO `base_transport_info` VALUES (2, '1', '监管仓库', '汽车');
+INSERT INTO `base_transport_info` VALUES (3, '2', '水路运输', '轮船');
+INSERT INTO `base_transport_info` VALUES (4, '3', '铁路运输', '火车');
+INSERT INTO `base_transport_info` VALUES (5, '4', '公路运输', '汽车');
+INSERT INTO `base_transport_info` VALUES (6, '5', '航空运输', '飞机');
+INSERT INTO `base_transport_info` VALUES (7, '6', '邮件运输', '汽车');
+INSERT INTO `base_transport_info` VALUES (8, '7', '保税区  ', '汽车');
+INSERT INTO `base_transport_info` VALUES (9, '8', '保税仓库', '汽车');
+INSERT INTO `base_transport_info` VALUES (10, '9', '其它运输', '汽车');
+INSERT INTO `base_transport_info` VALUES (11, 'A', '全部运输方式', '汽车');
+INSERT INTO `base_transport_info` VALUES (12, 'H', '边境特殊海关作业区', '汽车');
+INSERT INTO `base_transport_info` VALUES (13, 'W', '物流中心', '汽车');
+INSERT INTO `base_transport_info` VALUES (14, 'X', '物流园区', '汽车');
+INSERT INTO `base_transport_info` VALUES (14, 'Y', '保税港区', '汽车');
+INSERT INTO `base_transport_info` VALUES (14, 'Z', '出口加工区', '汽车');
